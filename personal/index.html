@@ -3,441 +3,640 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Haibo Wang's academic website: detection and imaging technologies, readout electronics, instrumentation, publications and academic service.">
-  <meta name="theme-color" content="#203e50">
+  <meta name="description" content="Haibo Wang: radiation detection and imaging technologies, readout electronics and instrumentation systems. Research themes, publications and academic service.">
+  <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="https://haibowanglab.github.io/academic/personal/">
-  <title>Haibo Wang | Detection, Imaging &amp; Instrumentation</title>
+  <title>Haibo Wang · Detection, Imaging and Readout Electronics</title>
   <style>
-    :root { color-scheme:light; --ink:#25343e; --secondary:#53616a; --accent:#234e63; --line:#dce3e6; --soft:#f4f7f8; }
-    * { box-sizing:border-box; }
-    html { scroll-padding-top:30px; }
-    body { margin:0; background:#fff; color:var(--ink); font:18px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; -webkit-font-smoothing:antialiased; }
-    [hidden] { display:none !important; }
-    a { color:var(--accent); text-underline-offset:4px; text-decoration-thickness:1px; }
-    a:hover { color:#112f40; }
-    a:focus-visible, button:focus-visible { outline:3px solid #467f99; outline-offset:5px; }
-    .skip-link { position:fixed; left:20px; top:-100px; z-index:3; padding:10px 16px; background:#fff; border:1px solid var(--accent); }
-    .skip-link:focus { top:12px; }
-    .page-shell { max-width:1250px; margin:0 auto; padding:64px 48px 0; display:grid; grid-template-columns:245px minmax(0,1fr); gap:72px; }
-    .profile { position:sticky; top:48px; align-self:start; border-top:3px solid var(--accent); padding-top:24px; }
-    .profile h1 { font:400 40px/1.2 Georgia,"Times New Roman",serif; letter-spacing:-1px; margin:0 0 12px; }
-    .name-cn { font-size:18px; font-weight:400; letter-spacing:3px; color:var(--secondary); }
-    .profile-summary { font-size:17px; line-height:1.8; color:var(--secondary); margin:24px 0 30px; }
-    nav { display:flex; flex-direction:column; gap:4px; border-top:1px solid var(--line); padding-top:20px; }
-    nav a { display:block; padding:7px 0; font-size:16px; text-decoration:none; color:var(--secondary); }
-    nav a[aria-current="location"] { color:var(--accent); font-weight:600; }
-    .profile-links { border-top:1px solid var(--line); margin-top:22px; padding-top:20px; display:flex; flex-wrap:wrap; gap:20px; font-size:15px; }
-    main { min-width:0; padding-bottom:32px; }
-    section { padding:0 0 48px; margin-bottom:42px; border-bottom:1px solid var(--line); }
-    .section-heading { display:flex; align-items:baseline; gap:16px; margin-bottom:24px; }
-    .section-number { font:14px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace; color:#74838b; }
-    h2 { font:400 31px/1.3 Georgia,"Times New Roman",serif; margin:0; letter-spacing:-.3px; }
-    h3 { font-size:19px; font-weight:600; line-height:1.5; margin:26px 0 12px; }
-    p { margin:0 0 18px; }
-    .about-lead { font-size:20px; line-height:1.8; margin-bottom:20px; }
-    .about-bio { color:var(--secondary); }
-    .research-topics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; }
-    .research-topic { margin:0; min-width:0; }
-    .research-illustration { display:block; width:100%; height:auto; border:1px solid var(--line); background:var(--soft); }
-    .research-topic figcaption { padding-top:16px; }
-    .research-topic h3 { margin:0 0 8px; font-size:18px; line-height:1.5; }
-    .research-topic p { margin:0; color:var(--secondary); font-size:16px; line-height:1.75; }
-    .schematic-note { font-size:14px; color:var(--secondary); margin:18px 0 0; }
-    @media(max-width:1100px) { .research-topics { grid-template-columns:1fr; gap:26px; } .research-topic { display:grid; grid-template-columns:220px minmax(0,1fr); gap:22px; align-items:center; } .research-topic figcaption { padding-top:0; } }
-    @media(max-width:600px) { .research-topic { display:block; } .research-topic figcaption { padding-top:14px; } .research-topics { gap:30px; } }
-    .publication-intro { font-size:16px; color:var(--secondary); margin-bottom:18px; }
-    .publication-tools { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px; padding-bottom:18px; border-bottom:1px solid var(--line); margin-bottom:30px; }
-    .filters { display:flex; gap:8px; flex-wrap:wrap; }
-    button { font:inherit; font-size:15px; line-height:1.5; border:1px solid var(--line); border-radius:3px; padding:7px 12px; background:#fff; color:var(--secondary); cursor:pointer; }
-    button[aria-pressed="true"] { background:var(--accent); border-color:var(--accent); color:#fff; }
-    .bib-link { font-size:15px; white-space:nowrap; }
-    .year-links { display:flex; gap:16px; flex-wrap:wrap; font-size:15px; margin:0 0 28px; }
-    .year-links a { color:var(--secondary); text-decoration:none; }
-    .year-links a:hover { text-decoration:underline; }
-    .publication-year { margin-bottom:34px; }
-    .publication-year > h3 { font:400 25px/1.4 Georgia,"Times New Roman",serif; margin:0 0 23px; padding-bottom:9px; border-bottom:1px solid var(--line); }
-    .pub-list { padding:0; margin:0; list-style:none; }
-    .pub-list li { display:grid; grid-template-columns:35px minmax(0,1fr); gap:14px; margin:0 0 28px; }
-    .pub-label { font:14px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace; padding-top:3px; color:#6e7b84; }
-    .pub-content { min-width:0; }
-    .pub-content h4 { font-size:18px; font-weight:600; line-height:1.6; margin:0 0 7px; }
-    .pub-content h4 a { color:var(--ink); text-decoration:none; }
-    .pub-content h4 a:hover { color:var(--accent); text-decoration:underline; }
-    .pub-authors, .pub-venue { color:var(--secondary); font-size:16px; line-height:1.75; margin:4px 0; }
-    .pub-authors strong { color:var(--ink); font-weight:600; }
-    .pub-doi { margin:7px 0 0; font-size:14px; line-height:1.7; overflow-wrap:anywhere; }
-    .filter-status { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
-    #service h3 { margin-top:24px; font-size:18px; }
-    #service ul { margin:0; padding-left:21px; color:var(--secondary); font-size:16px; line-height:1.85; }
-    #service li { padding-left:3px; margin:6px 0; }
-    footer { color:var(--secondary); font-size:14px; line-height:1.8; padding-bottom:40px; }
-    footer p { margin:0 0 8px; }
-    footer a { overflow-wrap:anywhere; }
-    .footer-row { display:flex; justify-content:space-between; gap:18px; margin-top:12px; }
-    @media(max-width:1020px) { .page-shell { gap:44px; grid-template-columns:210px minmax(0,1fr); padding:44px 32px 0; } .profile h1 { font-size:35px; } }
-    @media(max-width:800px) { .page-shell { display:block; max-width:780px; padding:30px 26px 0; } .profile { position:static; padding-top:20px; margin-bottom:42px; } .profile h1 { font-size:40px; } .profile-summary { margin:16px 0 18px; } nav { flex-direction:row; flex-wrap:wrap; gap:10px 23px; padding-top:15px; } nav a { padding:3px 0; } .profile-links { margin-top:16px; padding-top:14px; } section { padding-bottom:34px; margin-bottom:32px; } }
-    @media(max-width:480px) { .page-shell { padding-left:22px; padding-right:22px; } .about-lead { font-size:19px; } h2 { font-size:29px; } .section-heading { gap:12px; } .pub-list li { grid-template-columns:28px minmax(0,1fr); gap:10px; } .pub-content h4 { font-size:18px; } .publication-tools { align-items:flex-start; } .footer-row { flex-wrap:wrap; } }
-    @media print { body { font-size:12pt; } .page-shell { display:block; padding:0; max-width:none; } .profile { position:static; margin-bottom:28px; border-top:0; } nav, .profile-links, .publication-tools, .year-links, .skip-link, .footer-row { display:none !important; } .profile-summary { margin:10px 0; } section { margin-bottom:24px; padding-bottom:24px; } .pub-list li, .research-topic { break-inside:avoid; } .pub-content h4 { font-size:12pt; } .pub-authors, .pub-venue, .pub-doi { font-size:10pt; } a { color:inherit; text-decoration:none; } }
+    :root {
+      color-scheme: light;
+      --ink: #1b2730;
+      --text: #2a3741;
+      --muted: #4b5862;
+      --faint: #6a7680;
+      --rule: #d7dee2;
+      --rule-strong: #b9c4ca;
+      --accent: #1f4e6a;
+      --accent-deep: #133649;
+      --plate: #f3f6f8;
+      --signal: #ad7428;
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", Georgia, serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      --wrap: 1080px;
+      --gutter: 40px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
+    body { margin: 0; background: #fff; color: var(--text); font: 18px/1.7 var(--sans); -webkit-font-smoothing: antialiased; }
+    [hidden] { display: none !important; }
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: var(--accent-deep); }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+    p { margin: 0 0 1em; }
+    .skip-link { position: fixed; left: 16px; top: -80px; z-index: 20; padding: 8px 14px; background: #fff; border: 1px solid var(--accent); }
+    .skip-link:focus { top: 12px; }
+    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+
+    /* Top bar */
+    .topbar { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--rule); }
+    @supports (backdrop-filter: blur(6px)) { .topbar { background: rgba(255,255,255,.88); backdrop-filter: blur(6px); } }
+    .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 60px; }
+    .topbar-name { font: 500 19px/1.2 var(--serif); color: var(--ink); text-decoration: none; letter-spacing: .1px; white-space: nowrap; }
+    .topbar nav { display: flex; gap: 28px; }
+    .topbar nav a { font-size: 16px; color: var(--muted); text-decoration: none; padding: 17px 0 15px; border-bottom: 2px solid transparent; white-space: nowrap; }
+    .topbar nav a:hover { color: var(--ink); }
+    .topbar nav a[aria-current="location"] { color: var(--ink); border-bottom-color: var(--accent); }
+
+    /* Masthead */
+    .masthead { padding: 80px 0 56px; border-bottom: 1px solid var(--rule); }
+    .masthead h1 { margin: 0; font: 400 clamp(44px, 6vw, 64px)/1.05 var(--serif); color: var(--ink); letter-spacing: -.5px; }
+    .masthead .cn { display: block; margin-top: 14px; font: 400 21px/1.4 "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", SimSun, serif; letter-spacing: 6px; color: var(--muted); }
+    .masthead-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 56px; align-items: end; }
+    .fields { list-style: none; margin: 0; padding: 0 0 0 22px; border-left: 2px solid var(--accent); font: 400 21px/1.55 var(--serif); color: var(--ink); }
+    .fields li + li { margin-top: 4px; }
+    .masthead-links { display: flex; flex-wrap: wrap; gap: 8px 26px; margin-top: 36px; font-size: 16px; }
+
+    /* Sections */
+    section { padding: 64px 0; border-bottom: 1px solid var(--rule); }
+    .section-grid { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 40px; }
+    h2 { margin: 0; font: 400 30px/1.25 var(--serif); color: var(--ink); letter-spacing: -.2px; }
+    .section-aside { padding-top: 2px; }
+    .section-aside .aside-note { margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--faint); }
+    .about-text { max-width: 44em; margin: 0; font: 400 22px/1.65 var(--serif); color: var(--ink); }
+
+    /* Research */
+    .themes { display: grid; gap: 48px; }
+    .theme { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 40px; align-items: start; margin: 0; }
+    .theme + .theme { padding-top: 48px; border-top: 1px solid var(--rule); }
+    .theme h3 { margin: 0 0 10px; font: 600 20px/1.4 var(--sans); color: var(--ink); }
+    .theme p { margin: 0; color: var(--text); }
+    .theme .apps { margin-top: 14px; font-size: 16px; color: var(--muted); }
+    .plate { margin: 0; }
+    .plate svg { display: block; width: 100%; height: auto; background: var(--plate); border: 1px solid var(--rule); }
+    .plate figcaption { margin-top: 10px; font-size: 15px; line-height: 1.6; color: var(--muted); }
+    .plate figcaption b { font-weight: 600; color: var(--ink); }
+    .fig text { font-family: var(--sans); fill: #33434e; }
+    .fig .lbl { font-size: 15px; }
+    .fig .lbl-s { font-size: 13.5px; fill: #4b5862; }
+    .fig .lbl-sig { fill: #8a5a1c; }
+    .fig .math { font-family: var(--serif); font-style: italic; }
+
+    /* Publications */
+    .pub-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; padding-bottom: 20px; border-bottom: 1px solid var(--rule-strong); }
+    .filters { display: inline-flex; border: 1px solid var(--rule-strong); border-radius: 4px; overflow: hidden; }
+    .filters button { font: inherit; font-size: 15px; line-height: 1.4; padding: 8px 14px; border: 0; background: #fff; color: var(--muted); cursor: pointer; }
+    .filters button + button { border-left: 1px solid var(--rule-strong); }
+    .filters button:hover { color: var(--ink); background: var(--plate); }
+    .filters button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+    .filters .count { margin-left: 6px; font-variant-numeric: tabular-nums; opacity: .8; }
+    .pub-actions { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 15px; }
+    .year-links { display: flex; flex-wrap: wrap; gap: 4px 18px; margin: 16px 0 8px; font-size: 15px; color: var(--faint); }
+    .year-links a { color: var(--muted); text-decoration: none; font-variant-numeric: tabular-nums; }
+    .year-links a:hover { color: var(--accent); text-decoration: underline; }
+    .pub-key { margin: 0 0 4px; font-size: 15px; color: var(--faint); }
+    .pub-year { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 24px; padding-top: 28px; }
+    .pub-year + .pub-year { border-top: 1px solid var(--rule); }
+    .pub-year > h3 { margin: 0; font: 400 26px/1.3 var(--serif); color: var(--ink); font-variant-numeric: lining-nums tabular-nums; }
+    .pub-year > h3 span { position: sticky; top: 84px; display: block; }
+    .pub-list { list-style: none; margin: 0; padding: 0; }
+    .pub { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 12px; padding-bottom: 26px; }
+    .pub-id { padding-top: 3px; font-size: 14px; line-height: 1.6; color: var(--faint); font-variant-numeric: tabular-nums; }
+    .pub-body { min-width: 0; }
+    .pub-title { margin: 0 0 4px; font: 400 19px/1.45 var(--serif); color: var(--ink); }
+    .pub-title a { color: inherit; text-decoration: none; }
+    .pub-title a:hover { color: var(--accent); text-decoration: underline; }
+    .pub-authors, .pub-venue { margin: 0; font-size: 16px; line-height: 1.6; color: var(--muted); }
+    .pub-authors strong { font-weight: 600; color: var(--ink); }
+    .pub-venue em { color: var(--text); }
+    .pub-doi { margin: 4px 0 0; font-size: 15px; line-height: 1.6; overflow-wrap: anywhere; }
+    .filter-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+    /* Service */
+    .service-cols { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 40px; }
+    .service-cols h3 { margin: 0 0 10px; font: 600 18px/1.4 var(--sans); color: var(--ink); }
+    .service-cols ul { margin: 0; padding: 0; list-style: none; }
+    .service-cols li { padding: 7px 0; border-top: 1px solid var(--rule); font-size: 17px; line-height: 1.5; }
+    .service-cols li:last-child { border-bottom: 1px solid var(--rule); }
+
+    footer { padding: 32px 0 48px; font-size: 15px; color: var(--faint); }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; }
+    footer a { color: var(--muted); }
+
+    @media (max-width: 960px) {
+      :root { --gutter: 32px; }
+      .section-grid { grid-template-columns: 1fr; gap: 24px; }
+      .masthead-grid { grid-template-columns: 1fr; gap: 32px; }
+      .theme { grid-template-columns: 1fr; gap: 20px; }
+      .theme .plate { max-width: 600px; }
+    }
+    @media (max-width: 640px) {
+      :root { --gutter: 20px; }
+      body { font-size: 17px; }
+      html { scroll-padding-top: 108px; }
+      .topbar .wrap { flex-direction: column; align-items: flex-start; gap: 0; min-height: 0; padding-top: 10px; }
+      .topbar nav { gap: 20px; width: 100%; }
+      .topbar nav a { font-size: 15px; padding: 8px 0 9px; }
+      .masthead { padding: 44px 0 40px; }
+      .masthead .cn { font-size: 19px; }
+      .fields { font-size: 19px; padding-left: 16px; }
+      .masthead-links { margin-top: 26px; }
+      section { padding: 44px 0; }
+      .about-text { font-size: 20px; }
+      h2 { font-size: 27px; }
+      .themes { gap: 36px; }
+      .theme + .theme { padding-top: 36px; }
+      .pub-tools { align-items: flex-start; flex-direction: column; }
+      .filters { width: 100%; }
+      .filters button { flex: 1 1 auto; padding: 9px 8px; }
+      .pub-year { grid-template-columns: 1fr; gap: 14px; padding-top: 24px; }
+      .pub-year > h3 span { position: static; }
+      .pub { grid-template-columns: 34px minmax(0, 1fr); gap: 8px; }
+      .pub-title { font-size: 18px; }
+      .service-cols { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 380px) { .topbar nav { gap: 14px; } .topbar nav a { font-size: 14.5px; } }
+    @media print {
+      body { font-size: 11pt; }
+      .topbar, .skip-link, .pub-tools, .year-links, .masthead-links, footer { display: none !important; }
+      section, .masthead { padding: 18pt 0; }
+      .pub, .theme { break-inside: avoid; }
+      .pub-year > h3 span { position: static; }
+      a { color: inherit; text-decoration: none; }
+    }
   </style>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="page-shell">
-    <header class="profile">
-      <h1>Haibo Wang</h1>
-      <div class="name-cn" lang="zh-Hans">王海波</div>
-      <p class="profile-summary">Detection &amp; imaging<br>Readout electronics<br>Instrumentation &amp; systems</p>
-      <!-- Add a confirmed appointment and affiliation here when ready. -->
-      <nav aria-label="Main navigation">
-        <a href="#about" aria-current="location">About</a>
+
+  <header class="topbar">
+    <div class="wrap">
+      <a class="topbar-name" href="#top">Haibo Wang</a>
+      <nav aria-label="Sections">
+        <a href="#about">About</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
-        <a href="#service">Academic service</a>
+        <a href="#service">Service</a>
       </nav>
-      <div class="profile-links"><a href="https://github.com/haibowanglab">GitHub</a><a href="publications.bib" download>BibTeX</a></div>
-    </header>
-    <main id="main">
-      <section id="about" aria-labelledby="about-title">
-        <div class="section-heading"><span class="section-number" aria-hidden="true">01</span><h2 id="about-title">About</h2></div>
-        <!-- EDIT ABOUT: Research introduction based on the CV. -->
-        <p class="about-lead">Research focuses on detection and imaging, readout electronics and instrumentation, with applications in PET, SPECT and positron annihilation spectroscopy.</p>
-      </section>
-      <section id="research" aria-labelledby="research-title">
-        <div class="section-heading"><span class="section-number" aria-hidden="true">02</span><h2 id="research-title">Research</h2></div>
-        <!-- EDIT RESEARCH: Technical themes and established applications. -->
-        <div class="research-topics">
-          <figure class="research-topic"><svg class="research-illustration" viewBox="0 0 360 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="detector-diagram-title">
-  <title id="detector-diagram-title">Schematic of a scintillator array coupled to silicon photomultiplier sensors</title>
-  <defs><marker id="detector-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#53788c"/></marker></defs>
-  <rect width="360" height="230" fill="#f4f7f8"/>
-  <g font-family="Arial,sans-serif" font-size="18" text-anchor="middle" fill="#415865"><text x="190" y="32">Scintillator array</text><text x="190" y="212">SiPM array</text></g>
-  <g stroke="#527a8d" stroke-width="1.6" stroke-linejoin="round">
-    <path d="M66 65L80 53H124L110 65Z" fill="#cbdde6"/><rect x="66" y="65" width="44" height="83" fill="#e4eef3"/><path d="M110 65L124 53V136L110 148Z" fill="#bfd3de"/>
-    <path d="M120 65L134 53H178L164 65Z" fill="#cbdde6"/><rect x="120" y="65" width="44" height="83" fill="#e4eef3"/><path d="M164 65L178 53V136L164 148Z" fill="#bfd3de"/>
-    <path d="M174 65L188 53H232L218 65Z" fill="#cbdde6"/><rect x="174" y="65" width="44" height="83" fill="#e4eef3"/><path d="M218 65L232 53V136L218 148Z" fill="#bfd3de"/>
-    <path d="M228 65L242 53H286L272 65Z" fill="#cbdde6"/><rect x="228" y="65" width="44" height="83" fill="#e4eef3"/><path d="M272 65L286 53V136L272 148Z" fill="#bfd3de"/>
-  </g>
-  <g fill="#3a687c"><rect x="66" y="162" width="44" height="20" rx="2"/><rect x="120" y="162" width="44" height="20" rx="2"/><rect x="174" y="162" width="44" height="20" rx="2"/><rect x="228" y="162" width="44" height="20" rx="2"/></g>
-  <g stroke="#b58a44" stroke-width="2" fill="none"><path d="M88 100L79 124L89 143L86 159"/><path d="M142 93L152 115L141 139L145 159"/><path d="M196 107L187 129L198 146L194 159"/><path d="M250 94L259 119L249 141L252 159"/></g>
-  <path d="M28 49L73 83" stroke="#53788c" stroke-width="2" marker-end="url(#detector-arrow)"/><text x="23" y="39" font-family="Georgia,serif" font-size="24" fill="#415865">γ</text>
-</svg><figcaption><h3>Detection &amp; imaging</h3><p>Scintillator–SiPM detectors and PET/SPECT system development.</p></figcaption></figure>
-          <figure class="research-topic"><svg class="research-illustration" viewBox="0 0 360 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="readout-diagram-title">
-  <title id="readout-diagram-title">Schematic signal chain from SiPM through ASIC readout to data acquisition</title>
-  <defs><marker id="readout-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#53788c"/></marker></defs>
-  <rect width="360" height="230" fill="#f4f7f8"/>
-  <g stroke="#527a8d" stroke-width="1.6"><rect x="24" y="59" width="75" height="64" rx="3" fill="#e1ecf1"/><rect x="143" y="59" width="75" height="64" rx="3" fill="#cbdde6"/><rect x="262" y="59" width="75" height="64" rx="3" fill="#e1ecf1"/></g>
-  <g fill="#294e61" font-family="Arial,sans-serif" font-size="19" text-anchor="middle"><text x="61.5" y="98">SiPM</text><text x="180.5" y="98">ASIC</text><text x="299.5" y="98">DAQ</text></g>
-  <g stroke="#53788c" stroke-width="2" marker-end="url(#readout-arrow)"><path d="M104 91H134"/><path d="M223 91H253"/></g>
-  <path d="M28 173H83L89 141L98 173H166L173 149L182 173H251L258 145L267 173H332" fill="none" stroke="#b58a44" stroke-width="2.4" stroke-linejoin="round"/>
-  <text x="180" y="211" font-family="Arial,sans-serif" font-size="17" text-anchor="middle" fill="#415865">Timing · Energy · Position</text>
-</svg><figcaption><h3>Readout electronics</h3><p>Timing, energy and position readout with ASICs and FPGAs.</p></figcaption></figure>
-          <figure class="research-topic"><svg class="research-illustration" viewBox="0 0 360 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="lifetime-diagram-title">
-  <title id="lifetime-diagram-title">Conceptual start and stop signals illustrating a positron annihilation lifetime measurement</title>
-  <defs><marker id="lifetime-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#53788c"/></marker></defs>
-  <rect width="360" height="230" fill="#f4f7f8"/>
-  <g font-family="Arial,sans-serif" font-size="18" text-anchor="middle" fill="#415865"><text x="77" y="41">Start</text><text x="274" y="41">Stop</text></g>
-  <path d="M30 155H70L77 92L89 155H266L274 92L286 155H329" fill="none" stroke="#3a687c" stroke-width="2.8" stroke-linejoin="round"/>
-  <g stroke="#9aafb9" stroke-width="1.4" stroke-dasharray="4 4"><path d="M77 82V179"/><path d="M274 82V179"/></g>
-  <path d="M79 68H272" stroke="#53788c" stroke-width="1.8" marker-start="url(#lifetime-arrow)" marker-end="url(#lifetime-arrow)"/>
-  <rect x="154" y="53" width="43" height="28" fill="#f4f7f8"/><text x="175.5" y="73" fill="#9b7439" font-family="Georgia,serif" font-style="italic" font-size="25" text-anchor="middle">Δt</text>
-  <g font-family="Georgia,serif" font-style="italic" font-size="19" text-anchor="middle" fill="#415865"><text x="77" y="195">t₀</text><text x="274" y="195">t₁</text></g>
-  <text x="180" y="222" font-family="Arial,sans-serif" font-size="17" text-anchor="middle" fill="#415865">Lifetime measurement</text>
-</svg><figcaption><h3>Positron annihilation spectroscopy</h3><p>Lifetime measurements and instrumentation for materials characterization.</p></figcaption></figure>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="masthead">
+      <div class="wrap masthead-grid">
+        <div>
+          <h1>Haibo Wang <span class="cn" lang="zh-Hans">王海波</span></h1>
         </div>
-        <p class="schematic-note">Schematic illustrations of research themes.</p>
-      </section>
-      <section id="publications" aria-labelledby="publications-title">
-        <div class="section-heading"><span class="section-number" aria-hidden="true">03</span><h2 id="publications-title">Publications</h2></div>
-        <p class="publication-intro">Journal articles (J) and conference papers (C), by year.</p>
-        <div class="publication-tools">
-          <div class="filters" role="group" aria-label="Filter publications" hidden>
-            <button type="button" data-filter="all" aria-pressed="true">All</button>
-            <button type="button" data-filter="journal" aria-pressed="false">Journal articles</button>
-            <button type="button" data-filter="conference" aria-pressed="false">Conference papers</button>
+        <div>
+          <!-- Add a confirmed appointment and affiliation here when ready. -->
+          <ul class="fields" aria-label="Research areas">
+            <li>Radiation detection and imaging technologies</li>
+            <li>Readout electronics</li>
+            <li>Instrumentation systems</li>
+          </ul>
+          <div class="masthead-links">
+            <a href="#publications">Publications</a>
+            <a href="publications.bib" download>BibTeX</a>
+            <a href="https://github.com/haibowanglab">GitHub</a>
           </div>
-          <a class="bib-link" href="publications.bib" download>Download BibTeX ↓</a>
         </div>
-        <div class="year-links" aria-label="Publication years"><a href="#year-2026">2026</a><a href="#year-2025">2025</a><a href="#year-2024">2024</a><a href="#year-2023">2023</a><a href="#year-2022">2022</a><a href="#year-2020">2020</a></div>
-        <p class="filter-status" role="status" aria-live="polite"></p>
-        <!-- EDIT PUBLICATIONS: Keep identifiers, author order and DOI links when adding entries. -->
-        <div class="publication-year" id="year-2026"><h3>2026</h3><ol class="pub-list">
-<li data-kind="journal" id="j1">
-          <span class="pub-label">J1</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1109/TRPMS.2026.3665469">High-Resolution GAGG-SiPM Detectors for Preclinical Coincidence SPECT</a></h4>
-            <p class="pub-authors"><strong>H. Wang</strong>, J. Xie, Y. Jin, L. Meng, and J. Du</p>
-            <p class="pub-venue"><em>IEEE Transactions on Radiation and Plasma Medical Sciences</em>, Early Access (2026).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1109/TRPMS.2026.3665469">DOI: 10.1109/TRPMS.2026.3665469</a></p>
+      </div>
+    </div>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="wrap section-grid">
+        <div class="section-aside"><h2 id="about-title">About</h2></div>
+        <!-- EDIT ABOUT: one or two sentences; no education or employment history. -->
+        <p class="about-text">Haibo Wang works on radiation detection and imaging technologies, readout electronics and the instrumentation systems that integrate them. Applications include positron emission tomography (PET), single-photon emission computed tomography (SPECT) and positron annihilation spectroscopy.</p>
+      </div>
+    </section>
+
+    <section id="research" aria-labelledby="research-title">
+      <div class="wrap section-grid">
+        <div class="section-aside">
+          <h2 id="research-title">Research</h2>
+          <p class="aside-note">Figures are schematic and not to scale.</p>
+        </div>
+        <!-- EDIT RESEARCH: short theme descriptions; figures are schematic illustrations, not data. -->
+        <div class="themes">
+
+          <article class="theme">
+            <div>
+              <h3>Detection and imaging</h3>
+              <p>Scintillator and silicon photomultiplier (SiPM) detectors with time-of-flight and depth-of-interaction capability, and their integration into imaging systems.</p>
+              <p class="apps">Applications: PET, SPECT</p>
+            </div>
+            <figure class="plate">
+              <svg class="fig" viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-t">
+                <title id="fig1-t">Schematic of a ring imaging system and a dual-ended readout detector module, with SiPM arrays on both ends of a scintillator array and depth of interaction indicated along the crystals.</title>
+                <defs>
+                  <marker id="f1-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#4b6b7d"/></marker>
+                  <marker id="f1-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#ad7428"/></marker>
+                </defs>
+                <!-- ring of detector modules -->
+                <g transform="translate(122 140)">
+                  <circle r="96" fill="none" stroke="#c9d4da" stroke-width="1"/>
+                  <g fill="#dbe7ee" stroke="#3f6578" stroke-width="1.2">
+                    <rect x="-11" y="-104" width="22" height="18" transform="rotate(0)"/>
+                    <rect x="-11" y="-104" width="22" height="18" transform="rotate(22.5)"/>
+                    <rect x="-11" y="-104" width="22" height="18" transform="rotate(45)"/>
+                    <rect x="-11" y="-104" width="22" height="18" transform="rotate(67.5)" fill="#1f4e6a"/>
+                    <rect x="-11" y="-104" width="22" height="18" transform="rotate(90)"/>
+                    <rect x="-11" y="-104" width="22" height="18" transform="rotate(112.5)"/>
+                    <rect x="-11" y="-104" width="22" height="18" transform="rotate(135)"/>
+                    <rect x="-11" y="-104" width="22" height="18" transform="rotate(157.5)"/>
+                    <rect x="-11" y="-104" width="22" height="18" transform="rotate(180)"/>
+                    <rect x="-11" y="-104" width="22" height="18" transform="rotate(202.5)"/>
+                    <rect x="-11" y="-104" width="22" height="18" transform="rotate(225)"/>
+                    <rect x="-11" y="-104" width="22" height="18" transform="rotate(247.5)" fill="#1f4e6a"/>
+                    <rect x="-11" y="-104" width="22" height="18" transform="rotate(270)"/>
+                    <rect x="-11" y="-104" width="22" height="18" transform="rotate(292.5)"/>
+                    <rect x="-11" y="-104" width="22" height="18" transform="rotate(315)"/>
+                    <rect x="-11" y="-104" width="22" height="18" transform="rotate(337.5)"/>
+                  </g>
+                  <ellipse cx="-6" cy="8" rx="34" ry="26" fill="#eef2f4" stroke="#9fb0ba" stroke-width="1"/>
+                  <!-- line of response between the two highlighted modules (67.5° and 247.5°) -->
+                  <line x1="85" y1="-35" x2="-85" y2="35" stroke="#ad7428" stroke-width="1.6" stroke-dasharray="5 4"/>
+                  <circle cx="-8" cy="3" r="3.6" fill="#ad7428"/>
+                </g>
+                <text class="lbl-s" x="122" y="268" text-anchor="middle">Ring of detector modules</text>
+                <!-- zoom guides -->
+                <path d="M218 98 L292 44 M218 112 L292 236" stroke="#9fb0ba" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
+                <!-- module -->
+                <g>
+                  <rect x="300" y="40" width="96" height="14" fill="#1f4e6a"/>
+                  <rect x="300" y="226" width="96" height="14" fill="#1f4e6a"/>
+                  <rect x="300" y="56" width="96" height="168" fill="#dbe7ee" stroke="#3f6578" stroke-width="1.2"/>
+                  <g stroke="#7f9cad" stroke-width="1">
+                    <line x1="312" y1="56" x2="312" y2="224"/><line x1="324" y1="56" x2="324" y2="224"/><line x1="336" y1="56" x2="336" y2="224"/><line x1="348" y1="56" x2="348" y2="224"/><line x1="360" y1="56" x2="360" y2="224"/><line x1="372" y1="56" x2="372" y2="224"/><line x1="384" y1="56" x2="384" y2="224"/>
+                  </g>
+                  <!-- incident gamma and interaction -->
+                  <path d="M296 18 L337 128" stroke="#ad7428" stroke-width="1.8" fill="none" marker-end="url(#f1-g)"/>
+                  <circle cx="342" cy="138" r="4" fill="#ad7428"/>
+                  <!-- light to both ends -->
+                  <path d="M342 130 V60 M342 146 V220" stroke="#ad7428" stroke-width="1.2" stroke-dasharray="2 3" fill="none"/>
+                  <!-- DOI dimension -->
+                  <path d="M408 222 V142" stroke="#4b6b7d" stroke-width="1.3" marker-start="url(#f1-arr)" marker-end="url(#f1-arr)"/>
+                  <line x1="350" y1="138" x2="414" y2="138" stroke="#9fb0ba" stroke-width="1" stroke-dasharray="3 3"/>
+                </g>
+                <text class="lbl math lbl-sig" x="282" y="22">γ</text>
+                <text class="lbl" x="404" y="52">SiPM</text>
+                <text class="lbl" x="404" y="238">SiPM</text>
+                <text class="lbl" x="418" y="186">DOI</text>
+                <text class="lbl-s" x="348" y="268" text-anchor="middle">Dual-ended readout module</text>
+              </svg>
+              <figcaption><b>Fig. 1.</b> A ring imaging system and a detector module read out at both ends of the scintillator array; the signal ratio between the two ends encodes the depth of interaction (DOI).</figcaption>
+            </figure>
+          </article>
+
+          <article class="theme">
+            <div>
+              <h3>Readout electronics</h3>
+              <p>Front-end and digital readout for timing, energy and position measurement, including time-over-threshold methods, timing correction and FPGA-based data acquisition.</p>
+              <p class="apps">Applications: PET and SPECT detectors, lifetime spectrometers</p>
+            </div>
+            <figure class="plate">
+              <svg class="fig" viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig2-t">
+                <title id="fig2-t">Schematic readout chain from SiPM detector through front-end and digitisation to FPGA data acquisition, and a detector pulse crossing three thresholds whose crossing times give the time over threshold.</title>
+                <defs>
+                  <marker id="f2-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#4b6b7d"/></marker>
+                </defs>
+                <!-- chain -->
+                <g stroke="#3f6578" stroke-width="1.2">
+                  <rect x="18" y="24" width="88" height="48" fill="#dbe7ee"/>
+                  <rect x="132" y="24" width="96" height="48" fill="#dbe7ee"/>
+                  <rect x="254" y="24" width="96" height="48" fill="#dbe7ee"/>
+                  <rect x="376" y="24" width="86" height="48" fill="#1f4e6a"/>
+                </g>
+                <g stroke="#4b6b7d" stroke-width="1.4" marker-end="url(#f2-arr)">
+                  <line x1="106" y1="48" x2="130" y2="48"/><line x1="228" y1="48" x2="252" y2="48"/><line x1="350" y1="48" x2="374" y2="48"/>
+                </g>
+                <g class="lbl" text-anchor="middle">
+                  <text x="62" y="53">SiPM</text>
+                  <text x="180" y="53">Front-end</text>
+                  <text x="302" y="53">TDC / ADC</text>
+                  <text x="419" y="53" style="fill:#fff">FPGA</text>
+                </g>
+                <text class="lbl-s" x="62" y="92" text-anchor="middle">detector</text>
+                <text class="lbl-s" x="180" y="92" text-anchor="middle">amplify, shape</text>
+                <text class="lbl-s" x="302" y="92" text-anchor="middle">digitise</text>
+                <text class="lbl-s" x="419" y="92" text-anchor="middle">DAQ</text>
+                <!-- pulse and thresholds -->
+                <line x1="40" y1="246" x2="456" y2="246" stroke="#7f9cad" stroke-width="1"/>
+                <line x1="40" y1="246" x2="40" y2="118" stroke="#7f9cad" stroke-width="1"/>
+                <g stroke="#9fb0ba" stroke-width="1" stroke-dasharray="4 4">
+                  <line x1="40" y1="222" x2="430" y2="222"/>
+                  <line x1="40" y1="190" x2="430" y2="190"/>
+                  <line x1="40" y1="156" x2="430" y2="156"/>
+                </g>
+                <polyline points="40,246 86.0,246.0 88.0,244.6 90.0,240.9 92.0,235.4 94.0,228.6 96.0,221.1 98.0,212.9 100.0,204.6 102.0,196.3 104.0,188.1 106.0,180.2 108.0,172.8 110.0,165.8 112.0,159.4 114.0,153.6 116.0,148.4 118.0,143.9 120.0,139.9 122.0,136.6 124.0,133.8 126.0,131.6 128.0,130.0 130.0,128.9 132.0,128.2 134.0,128.0 136.0,128.2 138.0,128.8 140.0,129.7 142.0,130.9 144.0,132.4 146.0,134.2 148.0,136.1 150.0,138.3 152.0,140.6 154.0,143.1 156.0,145.7 158.0,148.3 160.0,151.1 162.0,153.9 164.0,156.7 166.0,159.6 168.0,162.5 170.0,165.4 172.0,168.2 174.0,171.1 176.0,173.9 178.0,176.7 180.0,179.4 182.0,182.1 184.0,184.8 186.0,187.3 188.0,189.8 190.0,192.3 192.0,194.7 194.0,197.0 196.0,199.2 198.0,201.4 200.0,203.5 202.0,205.5 204.0,207.4 206.0,209.3 208.0,211.1 210.0,212.8 212.0,214.5 214.0,216.1 216.0,217.6 218.0,219.1 220.0,220.5 222.0,221.8 224.0,223.1 226.0,224.3 228.0,225.4 230.0,226.5 232.0,227.6 234.0,228.6 236.0,229.6 238.0,230.5 240.0,231.3 242.0,232.2 244.0,232.9 246.0,233.7 248.0,234.4 250.0,235.0 252.0,235.7 254.0,236.3 256.0,236.8 258.0,237.4 260.0,237.9 262.0,238.3 264.0,238.8 266.0,239.2 268.0,239.6 270.0,240.0 272.0,240.4 274.0,240.7 276.0,241.0 278.0,241.3 280.0,241.6 282.0,241.9 284.0,242.1 286.0,242.4 288.0,242.6 290.0,242.8 292.0,243.0 294.0,243.2 296.0,243.4 298.0,243.5 300.0,243.7 302.0,243.8 304.0,244.0 306.0,244.1 308.0,244.2 310.0,244.3 312.0,244.4 314.0,244.5 316.0,244.6 318.0,244.7 320.0,244.8 322.0,244.9 324.0,244.9 326.0,245.0 328.0,245.1 330.0,245.1 332.0,245.2 334.0,245.2 336.0,245.3 338.0,245.3 340.0,245.4 342.0,245.4 344.0,245.5 346.0,245.5 348.0,245.5 350.0,245.6 352.0,245.6 354.0,245.6 356.0,245.6 358.0,245.7 360.0,245.7 362.0,245.7 364.0,245.7 366.0,245.7 368.0,245.8 370.0,245.8 372.0,245.8 374.0,245.8 376.0,245.8 378.0,245.8 380.0,245.8 382.0,245.9 384.0,245.9 386.0,245.9 388.0,245.9 390.0,245.9 392.0,245.9 394.0,245.9 396.0,245.9 398.0,245.9 400.0,245.9 402.0,245.9 404.0,245.9 406.0,245.9 408.0,245.9 410.0,245.9 412.0,245.9 414.0,246.0 416.0,246.0 418.0,246.0 420.0,246.0 422.0,246.0 424.0,246.0 426.0,246.0 428.0,246.0 430.0,246.0 432.0,246.0 434.0,246.0 436.0,246.0 438.0,246.0 440.0,246.0 442.0,246.0 444.0,246.0 446.0,246.0 448.0,246.0 450.0,246.0 452.0,246.0 454.0,246.0 456.0,246.0" fill="none" stroke="#1f4e6a" stroke-width="2.2" stroke-linejoin="round"/>
+                <!-- crossing marks: computed on the pulse curve -->
+                <g fill="#ad7428"><circle cx="96.0" cy="222" r="3.4"/><circle cx="222.2" cy="222" r="3.4"/><circle cx="103.8" cy="190" r="3.4"/><circle cx="188.0" cy="190" r="3.4"/><circle cx="113.2" cy="156" r="3.4"/><circle cx="163.2" cy="156" r="3.4"/></g>
+                <!-- ToT for lowest threshold -->
+                <path d="M96.0 262 H222.2" stroke="#ad7428" stroke-width="1.4" marker-start="url(#f2-arr)" marker-end="url(#f2-arr)"/>
+                <text class="lbl lbl-sig" x="159" y="277" text-anchor="middle">time over threshold</text>
+                <g class="lbl-s" text-anchor="start">
+                  <text x="436" y="226">V₁</text><text x="436" y="194">V₂</text><text x="436" y="160">V₃</text>
+                </g>
+                <text class="lbl-s math" x="452" y="262" text-anchor="end">t</text>
+              </svg>
+              <figcaption><b>Fig. 2.</b> Readout chain, and a detector pulse sampled at several thresholds; the crossing times carry timing information and the time over threshold relates to pulse amplitude.</figcaption>
+            </figure>
+          </article>
+
+          <article class="theme">
+            <div>
+              <h3>Positron annihilation spectroscopy</h3>
+              <p>SiPM-based detectors, coincidence systems and digital spectrometers for positron annihilation lifetime measurement in materials studies.</p>
+              <p class="apps">Applications: materials characterisation, thin films</p>
+            </div>
+            <figure class="plate">
+              <svg class="fig" viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig3-t">
+                <title id="fig3-t">Schematic of a positron annihilation lifetime measurement: a sodium-22 source between two sample pieces; a 1.27 MeV gamma ray reaches the start detector and a 511 keV annihilation gamma ray reaches the stop detector; the time difference between the two signals is the positron lifetime.</title>
+                <defs>
+                  <marker id="f3-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#ad7428"/></marker>
+                  <marker id="f3-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#4b6b7d"/></marker>
+                </defs>
+                <!-- detectors: scintillator + SiPM -->
+                <g stroke="#3f6578" stroke-width="1.2">
+                  <rect x="70" y="48" width="44" height="64" fill="#dbe7ee"/>
+                  <rect x="366" y="48" width="44" height="64" fill="#dbe7ee"/>
+                </g>
+                <rect x="56" y="48" width="12" height="64" fill="#1f4e6a"/>
+                <rect x="412" y="48" width="12" height="64" fill="#1f4e6a"/>
+                <!-- sample sandwich -->
+                <rect x="226" y="54" width="10" height="52" fill="#c9d4da" stroke="#4b6b7d" stroke-width="1"/>
+                <rect x="244" y="54" width="10" height="52" fill="#c9d4da" stroke="#4b6b7d" stroke-width="1"/>
+                <circle cx="240" cy="80" r="4" fill="#ad7428"/>
+                <!-- gammas -->
+                <path d="M226 80 H120" stroke="#ad7428" stroke-width="1.8" marker-end="url(#f3-g)"/>
+                <path d="M254 80 H360" stroke="#ad7428" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#f3-g)"/>
+                <text class="lbl lbl-sig" x="172" y="70" text-anchor="middle">1.27 MeV</text>
+                <text class="lbl lbl-sig" x="306" y="70" text-anchor="middle">511 keV</text>
+                <text class="lbl" x="92" y="134" text-anchor="middle">Start</text>
+                <text class="lbl" x="388" y="134" text-anchor="middle">Stop</text>
+                <text class="lbl-s" x="240" y="128" text-anchor="middle">sample / ²²Na / sample</text>
+                <!-- timing -->
+                <line x1="40" y1="236" x2="456" y2="236" stroke="#7f9cad" stroke-width="1"/>
+                <path d="M40 236 H88 L94 176 L104 236 H360 L366 176 L376 236 H456" fill="none" stroke="#1f4e6a" stroke-width="2.2" stroke-linejoin="round"/>
+                <g stroke="#9fb0ba" stroke-width="1" stroke-dasharray="3 3"><line x1="94" y1="164" x2="94" y2="250"/><line x1="366" y1="164" x2="366" y2="250"/></g>
+                <path d="M98 170 H362" stroke="#4b6b7d" stroke-width="1.3" marker-start="url(#f3-arr)" marker-end="url(#f3-arr)"/>
+                <rect x="208" y="156" width="64" height="26" fill="#f3f6f8"/>
+                <text class="lbl math" x="240" y="175" text-anchor="middle" style="font-size:18px">Δt</text>
+                <text class="lbl-s math" x="94" y="266" text-anchor="middle">t₀</text>
+                <text class="lbl-s math" x="366" y="266" text-anchor="middle">t₁</text>
+                <text class="lbl-s" x="240" y="212" text-anchor="middle">positron lifetime</text>
+              </svg>
+              <figcaption><b>Fig. 3.</b> Lifetime measurement with a ²²Na source: the 1.27 MeV γ ray emitted with the positron gives the start signal and a 511 keV annihilation γ ray gives the stop signal.</figcaption>
+            </figure>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" aria-labelledby="publications-title">
+      <div class="wrap section-grid">
+        <div class="section-aside">
+          <h2 id="publications-title">Publications</h2>
+          <p class="aside-note">J: journal article<br>C: conference paper</p>
+        </div>
+        <div>
+          <div class="pub-tools">
+            <div class="filters" role="group" aria-label="Filter publications" hidden>
+              <button type="button" data-filter="all" aria-pressed="true">All<span class="count"></span></button>
+              <button type="button" data-filter="journal" aria-pressed="false">Journal<span class="count"></span></button>
+              <button type="button" data-filter="conference" aria-pressed="false">Conference<span class="count"></span></button>
+            </div>
+            <div class="pub-actions"><a href="publications.bib" download>Download BibTeX (.bib)</a></div>
           </div>
-        </li>
-<li data-kind="journal" id="j2">
-          <span class="pub-label">J2</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1088/1361-6560/ae9a28">High spatial resolution dual-ended readout PET detector based on continuous resistive layer silicon photomultiplier</a></h4>
-            <p class="pub-authors">J. Xie, <strong>H. Wang</strong>, and J. Du</p>
-            <p class="pub-venue"><em>Physics in Medicine &amp; Biology</em>, 71(18), 185012 (2026).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1088/1361-6560/ae9a28">DOI: 10.1088/1361-6560/ae9a28</a></p>
+          <nav class="year-links" aria-label="Publication years"><a href="#year-2026">2026</a><a href="#year-2025">2025</a><a href="#year-2024">2024</a><a href="#year-2023">2023</a><a href="#year-2022">2022</a><a href="#year-2020">2020</a></nav>
+          <p class="filter-status" role="status" aria-live="polite"></p>
+
+          <!-- EDIT PUBLICATIONS: keep identifiers, author order and DOI links; set data-kind="journal" or "conference". -->
+          <div class="pub-year" id="year-2026"><h3><span>2026</span></h3><ol class="pub-list">
+            <li class="pub" data-kind="journal" id="j1"><span class="pub-id">J1</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1109/TRPMS.2026.3665469">High-Resolution GAGG-SiPM Detectors for Preclinical Coincidence SPECT</a></p>
+              <p class="pub-authors"><strong>H. Wang</strong>, J. Xie, Y. Jin, L. Meng, and J. Du</p>
+              <p class="pub-venue"><em>IEEE Transactions on Radiation and Plasma Medical Sciences</em>, Early Access (2026).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1109/TRPMS.2026.3665469">doi:10.1109/TRPMS.2026.3665469</a></p>
+            </div></li>
+            <li class="pub" data-kind="journal" id="j2"><span class="pub-id">J2</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1088/1361-6560/ae9a28">High spatial resolution dual-ended readout PET detector based on continuous resistive layer silicon photomultiplier</a></p>
+              <p class="pub-authors">J. Xie, <strong>H. Wang</strong>, and J. Du</p>
+              <p class="pub-venue"><em>Physics in Medicine &amp; Biology</em>, 71(18), 185012 (2026).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1088/1361-6560/ae9a28">doi:10.1088/1361-6560/ae9a28</a></p>
+            </div></li>
+            <li class="pub" data-kind="journal" id="j3"><span class="pub-id">J3</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1109/TRPMS.2026.3696900">Ultra-High Spatial Resolution PET/Compton Detector Based on 0.32 mm Pitch GAGG Array</a></p>
+              <p class="pub-authors">J. Xie, <strong>H. Wang</strong>, J. Qi, S. R. Cherry, and J. Du</p>
+              <p class="pub-venue"><em>IEEE Transactions on Radiation and Plasma Medical Sciences</em>, Early Access (2026).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1109/TRPMS.2026.3696900">doi:10.1109/TRPMS.2026.3696900</a></p>
+            </div></li>
+          </ol></div>
+
+          <div class="pub-year" id="year-2025"><h3><span>2025</span></h3><ol class="pub-list">
+            <li class="pub" data-kind="journal" id="j4"><span class="pub-id">J4</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1186/s40658-025-00759-y">Dual-Ended Readout TOF-DOI PET Detectors Based on 3.2 mm and 1.6 mm Pitch LYSO Arrays</a></p>
+              <p class="pub-authors"><strong>H. Wang</strong>, J. Xie, J. Qi, S. R. Cherry, and J. Du</p>
+              <p class="pub-venue"><em>EJNMMI Physics</em>, 12(1), 51 (2025).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1186/s40658-025-00759-y">doi:10.1186/s40658-025-00759-y</a></p>
+            </div></li>
+            <li class="pub" data-kind="journal" id="j5"><span class="pub-id">J5</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1109/TIM.2025.3570343">Development of Whole-Body TOF-DOI PET Detector Using Dual-Ended Readout Method</a></p>
+              <p class="pub-authors"><strong>H. Wang</strong>, J. Xie, and J. Du</p>
+              <p class="pub-venue"><em>IEEE Transactions on Instrumentation and Measurement</em>, 74, 4010509 (2025).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1109/TIM.2025.3570343">doi:10.1109/TIM.2025.3570343</a></p>
+            </div></li>
+            <li class="pub" data-kind="journal" id="j6"><span class="pub-id">J6</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1109/TRPMS.2024.3497774">A Time-Walk and Timing-Shift Correction Method for Dual-Ended Readout TOF-DOI PET Detectors</a></p>
+              <p class="pub-authors"><strong>H. Wang</strong>, J. Xie, J. Qi, S. R. Cherry, and J. Du</p>
+              <p class="pub-venue"><em>IEEE Transactions on Radiation and Plasma Medical Sciences</em>, 9(3), 277–283 (2025).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1109/TRPMS.2024.3497774">doi:10.1109/TRPMS.2024.3497774</a></p>
+            </div></li>
+            <li class="pub" data-kind="journal" id="j7"><span class="pub-id">J7</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1002/mp.18103">High-resolution dual-ended readout PET detectors based on 0.5 mm pitch LYSO arrays with various reflectors</a></p>
+              <p class="pub-authors">J. Xie, <strong>H. Wang</strong>, and J. Du</p>
+              <p class="pub-venue"><em>Medical Physics</em>, 52(9), e18103 (2025).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1002/mp.18103">doi:10.1002/mp.18103</a></p>
+            </div></li>
+            <li class="pub" data-kind="journal" id="j8"><span class="pub-id">J8</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1088/1361-6560/ada084">High spatial resolution PET detectors based on 10 mm × 10 mm linearly-graded SiPMs and 0.5 mm pitch LYSO arrays</a></p>
+              <p class="pub-authors">J. Xie, <strong>H. Wang</strong>, S. Merzi, G. Paternoster, A. Gola, J. Qi, S. R. Cherry, and J. Du</p>
+              <p class="pub-venue"><em>Physics in Medicine &amp; Biology</em>, 70(2), 025016 (2025).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1088/1361-6560/ada084">doi:10.1088/1361-6560/ada084</a></p>
+            </div></li>
+          </ol></div>
+
+          <div class="pub-year" id="year-2024"><h3><span>2024</span></h3><ol class="pub-list">
+            <li class="pub" data-kind="journal" id="j9"><span class="pub-id">J9</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1109/TRPMS.2024.3381865">PET Detectors Based on Multi-Resolution SiPM Arrays</a></p>
+              <p class="pub-authors">J. Xie, <strong>H. Wang</strong>, S. R. Cherry, and J. Du</p>
+              <p class="pub-venue"><em>IEEE Transactions on Radiation and Plasma Medical Sciences</em>, 8(5), 493–500 (2024).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1109/TRPMS.2024.3381865">doi:10.1109/TRPMS.2024.3381865</a></p>
+            </div></li>
+            <li class="pub" data-kind="conference" id="c1"><span class="pub-id">C1</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1109/NSS/MIC/RTSD57108.2024.10657665">Dual-Ended Readout TOF-DOI PET Detectors</a></p>
+              <p class="pub-authors"><strong>H. Wang</strong>, J. Xie, J. Qi, S. R. Cherry, and J. Du</p>
+              <p class="pub-venue"><em>2024 IEEE Nuclear Science Symposium (NSS), Medical Imaging Conference (MIC) and Room Temperature Semiconductor Detector Conference (RTSD)</em>, Tampa, FL, USA (2024).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1109/NSS/MIC/RTSD57108.2024.10657665">doi:10.1109/NSS/MIC/RTSD57108.2024.10657665</a></p>
+            </div></li>
+            <li class="pub" data-kind="conference" id="c2"><span class="pub-id">C2</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1109/NSS/MIC/RTSD57108.2024.10657080">High-Stopping Power Ceramic Scintillator Lu₂O₃:La for High-Resolution Brain PET Applications</a></p>
+              <p class="pub-authors">J. Xie, <strong>H. Wang</strong>, M. Muller, J. Glodo, S. R. Cherry, and J. Du</p>
+              <p class="pub-venue"><em>2024 IEEE Nuclear Science Symposium (NSS), Medical Imaging Conference (MIC) and Room Temperature Semiconductor Detector Conference (RTSD)</em>, Tampa, FL, USA (2024).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1109/NSS/MIC/RTSD57108.2024.10657080">doi:10.1109/NSS/MIC/RTSD57108.2024.10657080</a></p>
+            </div></li>
+          </ol></div>
+
+          <div class="pub-year" id="year-2023"><h3><span>2023</span></h3><ol class="pub-list">
+            <li class="pub" data-kind="journal" id="j10"><span class="pub-id">J10</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1016/j.nima.2023.168334">A SiPM-based dual and triple coincidence system for positron annihilation lifetime measurement</a></p>
+              <p class="pub-authors"><strong>H.B. Wang</strong>, X.X. Han, J.D. Liu, H.J. Zhang, H. Liang, and B.J. Ye</p>
+              <p class="pub-venue"><em>Nuclear Instruments and Methods in Physics Research A</em>, 1053, 168334 (2023).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1016/j.nima.2023.168334">doi:10.1016/j.nima.2023.168334</a></p>
+            </div></li>
+            <li class="pub" data-kind="journal" id="j11"><span class="pub-id">J11</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1016/j.nima.2023.168244">Evaluation of a resistor-chain-based SiPM detector for positron annihilation lifetime measurement</a></p>
+              <p class="pub-authors"><strong>H.B. Wang</strong>, X.X. Han, Q.H. Zhao, J.D. Liu, H.J. Zhang, H. Liang, and B.J. Ye</p>
+              <p class="pub-venue"><em>Nuclear Instruments and Methods in Physics Research A</em>, 1052, 168244 (2023).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1016/j.nima.2023.168244">doi:10.1016/j.nima.2023.168244</a></p>
+            </div></li>
+            <li class="pub" data-kind="conference" id="c3"><span class="pub-id">C3</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1109/NSSMICRTSD49126.2023.10338262">A large-size depth-of-interaction encoding BGO detector for low-dose PET imaging</a></p>
+              <p class="pub-authors"><strong>H. Wang</strong>, J. Xie, J. Qi, S. R. Cherry, and J. Du</p>
+              <p class="pub-venue"><em>2023 IEEE Nuclear Science Symposium, Medical Imaging Conference and International Symposium on Room-Temperature Semiconductor Detectors (NSS MIC RTSD)</em>, Vancouver, BC, Canada (2023).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1109/NSSMICRTSD49126.2023.10338262">doi:10.1109/NSSMICRTSD49126.2023.10338262</a></p>
+            </div></li>
+            <li class="pub" data-kind="conference" id="c4"><span class="pub-id">C4</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1109/NSSMICRTSD49126.2023.10338263">Evaluation of 10 × 10 mm² Linearly Graded SiPMs for High-resolution Small-animal PET</a></p>
+              <p class="pub-authors">J. Xie, <strong>H. Wang</strong>, S. Merzi, G. Paternoster, A. Gola, S. R. Cherry, and J. Du</p>
+              <p class="pub-venue"><em>2023 IEEE Nuclear Science Symposium, Medical Imaging Conference and International Symposium on Room-Temperature Semiconductor Detectors (NSS MIC RTSD)</em>, Vancouver, BC, Canada (2023).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1109/NSSMICRTSD49126.2023.10338263">doi:10.1109/NSSMICRTSD49126.2023.10338263</a></p>
+            </div></li>
+            <li class="pub" data-kind="conference" id="c5"><span class="pub-id">C5</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1109/NSSMICRTSD49126.2023.10338328">Performance of a PET Detector Based on Multi-resolution SiPM Array</a></p>
+              <p class="pub-authors">J. Xie, <strong>H. Wang</strong>, S. R. Cherry, and J. Du</p>
+              <p class="pub-venue"><em>2023 IEEE Nuclear Science Symposium, Medical Imaging Conference and International Symposium on Room-Temperature Semiconductor Detectors (NSS MIC RTSD)</em>, Vancouver, BC, Canada (2023).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1109/NSSMICRTSD49126.2023.10338328">doi:10.1109/NSSMICRTSD49126.2023.10338328</a></p>
+            </div></li>
+          </ol></div>
+
+          <div class="pub-year" id="year-2022"><h3><span>2022</span></h3><ol class="pub-list">
+            <li class="pub" data-kind="journal" id="j12"><span class="pub-id">J12</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1016/j.nima.2022.166921">A new digital positron annihilation lifetime spectrometer for a single piece of micron-thickness film</a></p>
+              <p class="pub-authors">Q.H. Zhao, X.X. Han, <strong>H.B. Wang</strong>, Y. Dong, Y.H. Li, M. Luo, J.Q. Guo, J.D. Liu, H.J. Zhang, and B.J. Ye</p>
+              <p class="pub-venue"><em>Nuclear Instruments and Methods in Physics Research A</em>, 1038, 166921 (2022).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1016/j.nima.2022.166921">doi:10.1016/j.nima.2022.166921</a></p>
+            </div></li>
+            <li class="pub" data-kind="journal" id="j13"><span class="pub-id">J13</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1016/j.nima.2021.165974">A multi-parameter discrimination digital positron annihilation lifetime spectrometer using a fast digital oscilloscope</a></p>
+              <p class="pub-authors">Q.H. Zhao, R. Ye, <strong>H.B. Wang</strong>, L.H. Cong, J.D. Liu, H.J. Zhang, and B.J. Ye</p>
+              <p class="pub-venue"><em>Nuclear Instruments and Methods in Physics Research A</em>, 1023, 165974 (2022).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1016/j.nima.2021.165974">doi:10.1016/j.nima.2021.165974</a></p>
+            </div></li>
+          </ol></div>
+
+          <div class="pub-year" id="year-2020"><h3><span>2020</span></h3><ol class="pub-list">
+            <li class="pub" data-kind="journal" id="j14"><span class="pub-id">J14</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1016/j.nima.2020.163662">A new SiPM-based positron annihilation lifetime spectrometer using LYSO and LFS-3 scintillators</a></p>
+              <p class="pub-authors"><strong>H.B. Wang</strong>, Q.H. Zhao, H. Liang, B.C. Gu, J.D. Liu, H.J. Zhang, and B.J. Ye</p>
+              <p class="pub-venue"><em>Nuclear Instruments and Methods in Physics Research A</em>, 960, 163662 (2020).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1016/j.nima.2020.163662">doi:10.1016/j.nima.2020.163662</a></p>
+            </div></li>
+            <li class="pub" data-kind="journal" id="j15"><span class="pub-id">J15</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1088/1748-0221/15/11/P11006">Multiple time-over-threshold readout electronics for fast timing and energy resolving in a SiPM-based positron annihilation lifetime spectrometer</a></p>
+              <p class="pub-authors"><strong>H.B. Wang</strong>, J.D. Liu, H.J. Zhang, H. Liang, and B.J. Ye</p>
+              <p class="pub-venue"><em>Journal of Instrumentation</em>, 15(11), P11006 (2020).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1088/1748-0221/15/11/P11006">doi:10.1088/1748-0221/15/11/P11006</a></p>
+            </div></li>
+            <li class="pub" data-kind="journal" id="j16"><span class="pub-id">J16</span><div class="pub-body">
+              <p class="pub-title"><a href="https://doi.org/10.1088/1748-0221/15/06/P06001">Coincidence time resolution investigation of BaF₂-based H6610 detectors for a digital positron annihilation lifetime spectrometer</a></p>
+              <p class="pub-authors">R. Ye, Q.H. Zhao, <strong>H.B. Wang</strong>, B.C. Gu, Z.W. Pan, J.D. Liu, and B.J. Ye</p>
+              <p class="pub-venue"><em>Journal of Instrumentation</em>, 15(6), P06001 (2020).</p>
+              <p class="pub-doi"><a href="https://doi.org/10.1088/1748-0221/15/06/P06001">doi:10.1088/1748-0221/15/06/P06001</a></p>
+            </div></li>
+          </ol></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="service" aria-labelledby="service-title">
+      <div class="wrap section-grid">
+        <div class="section-aside"><h2 id="service-title">Service</h2></div>
+        <!-- EDIT SERVICE: reviewer roles supplied by the author. -->
+        <div class="service-cols">
+          <div>
+            <h3>Journal reviewing</h3>
+            <ul>
+              <li>IEEE Transactions on Instrumentation and Measurement</li>
+              <li>IEEE Transactions on Medical Imaging</li>
+              <li>IEEE Transactions on Nuclear Science</li>
+              <li>IEEE Transactions on Radiation and Plasma Medical Sciences</li>
+              <li>Nuclear Science and Techniques</li>
+              <li>Journal of X-Ray Science and Technology</li>
+              <li>Nuclear Instruments and Methods in Physics Research Section A</li>
+            </ul>
           </div>
-        </li>
-<li data-kind="journal" id="j3">
-          <span class="pub-label">J3</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1109/TRPMS.2026.3696900">Ultra-High Spatial Resolution PET/Compton Detector Based on 0.32 mm Pitch GAGG Array</a></h4>
-            <p class="pub-authors">J. Xie, <strong>H. Wang</strong>, J. Qi, S. R. Cherry, and J. Du</p>
-            <p class="pub-venue"><em>IEEE Transactions on Radiation and Plasma Medical Sciences</em>, Early Access (2026).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1109/TRPMS.2026.3696900">DOI: 10.1109/TRPMS.2026.3696900</a></p>
+          <div>
+            <h3>Conference reviewing</h3>
+            <ul>
+              <li>World Molecular Imaging Congress (WMIC), 2025 and 2026</li>
+            </ul>
           </div>
-        </li>
-</ol></div>
-<div class="publication-year" id="year-2025"><h3>2025</h3><ol class="pub-list">
-<li data-kind="journal" id="j4">
-          <span class="pub-label">J4</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1186/s40658-025-00759-y">Dual-Ended Readout TOF-DOI PET Detectors Based on 3.2 mm and 1.6 mm Pitch LYSO Arrays</a></h4>
-            <p class="pub-authors"><strong>H. Wang</strong>, J. Xie, J. Qi, S. R. Cherry, and J. Du</p>
-            <p class="pub-venue"><em>EJNMMI Physics</em>, 12(1), 51 (2025).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1186/s40658-025-00759-y">DOI: 10.1186/s40658-025-00759-y</a></p>
-          </div>
-        </li>
-<li data-kind="journal" id="j5">
-          <span class="pub-label">J5</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1109/TIM.2025.3570343">Development of Whole-Body TOF-DOI PET Detector Using Dual-Ended Readout Method</a></h4>
-            <p class="pub-authors"><strong>H. Wang</strong>, J. Xie, and J. Du</p>
-            <p class="pub-venue"><em>IEEE Transactions on Instrumentation and Measurement</em>, 74, 4010509 (2025).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1109/TIM.2025.3570343">DOI: 10.1109/TIM.2025.3570343</a></p>
-          </div>
-        </li>
-<li data-kind="journal" id="j6">
-          <span class="pub-label">J6</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1109/TRPMS.2024.3497774">A Time-Walk and Timing-Shift Correction Method for Dual-Ended Readout TOF-DOI PET Detectors</a></h4>
-            <p class="pub-authors"><strong>H. Wang</strong>, J. Xie, J. Qi, S. R. Cherry, and J. Du</p>
-            <p class="pub-venue"><em>IEEE Transactions on Radiation and Plasma Medical Sciences</em>, 9(3), 277–283 (2025).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1109/TRPMS.2024.3497774">DOI: 10.1109/TRPMS.2024.3497774</a></p>
-          </div>
-        </li>
-<li data-kind="journal" id="j7">
-          <span class="pub-label">J7</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1002/mp.18103">High-resolution dual-ended readout PET detectors based on 0.5 mm pitch LYSO arrays with various reflectors</a></h4>
-            <p class="pub-authors">J. Xie, <strong>H. Wang</strong>, and J. Du</p>
-            <p class="pub-venue"><em>Medical Physics</em>, 52(9), e18103 (2025).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1002/mp.18103">DOI: 10.1002/mp.18103</a></p>
-          </div>
-        </li>
-<li data-kind="journal" id="j8">
-          <span class="pub-label">J8</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1088/1361-6560/ada084">High spatial resolution PET detectors based on 10 mm × 10 mm linearly-graded SiPMs and 0.5 mm pitch LYSO arrays</a></h4>
-            <p class="pub-authors">J. Xie, <strong>H. Wang</strong>, S. Merzi, G. Paternoster, A. Gola, J. Qi, S. R. Cherry, and J. Du</p>
-            <p class="pub-venue"><em>Physics in Medicine &amp; Biology</em>, 70(2), 025016 (2025).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1088/1361-6560/ada084">DOI: 10.1088/1361-6560/ada084</a></p>
-          </div>
-        </li>
-</ol></div>
-<div class="publication-year" id="year-2024"><h3>2024</h3><ol class="pub-list">
-<li data-kind="journal" id="j9">
-          <span class="pub-label">J9</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1109/TRPMS.2024.3381865">PET Detectors Based on Multi-Resolution SiPM Arrays</a></h4>
-            <p class="pub-authors">J. Xie, <strong>H. Wang</strong>, S. R. Cherry, and J. Du</p>
-            <p class="pub-venue"><em>IEEE Transactions on Radiation and Plasma Medical Sciences</em>, 8(5), 493–500 (2024).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1109/TRPMS.2024.3381865">DOI: 10.1109/TRPMS.2024.3381865</a></p>
-          </div>
-        </li>
-<li data-kind="conference" id="c1">
-          <span class="pub-label">C1</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1109/NSS/MIC/RTSD57108.2024.10657665">Dual-Ended Readout TOF-DOI PET Detectors</a></h4>
-            <p class="pub-authors"><strong>H. Wang</strong>, J. Xie, J. Qi, S. R. Cherry, and J. Du</p>
-            <p class="pub-venue"><em>2024 IEEE Nuclear Science Symposium (NSS), Medical Imaging Conference (MIC) and Room Temperature Semiconductor Detector Conference (RTSD)</em>, Tampa, FL, USA (2024).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1109/NSS/MIC/RTSD57108.2024.10657665">DOI: 10.1109/NSS/MIC/RTSD57108.2024.10657665</a></p>
-          </div>
-        </li>
-<li data-kind="conference" id="c2">
-          <span class="pub-label">C2</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1109/NSS/MIC/RTSD57108.2024.10657080">High-Stopping Power Ceramic Scintillator Lu₂O₃:La for High-Resolution Brain PET Applications</a></h4>
-            <p class="pub-authors">J. Xie, <strong>H. Wang</strong>, M. Muller, J. Glodo, S. R. Cherry, and J. Du</p>
-            <p class="pub-venue"><em>2024 IEEE Nuclear Science Symposium (NSS), Medical Imaging Conference (MIC) and Room Temperature Semiconductor Detector Conference (RTSD)</em>, Tampa, FL, USA (2024).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1109/NSS/MIC/RTSD57108.2024.10657080">DOI: 10.1109/NSS/MIC/RTSD57108.2024.10657080</a></p>
-          </div>
-        </li>
-</ol></div>
-<div class="publication-year" id="year-2023"><h3>2023</h3><ol class="pub-list">
-<li data-kind="journal" id="j10">
-          <span class="pub-label">J10</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1016/j.nima.2023.168334">A SiPM-based dual and triple coincidence system for positron annihilation lifetime measurement</a></h4>
-            <p class="pub-authors"><strong>H.B. Wang</strong>, X.X. Han, J.D. Liu, H.J. Zhang, H. Liang, and B.J. Ye</p>
-            <p class="pub-venue"><em>Nuclear Instruments and Methods in Physics Research A</em>, 1053, 168334 (2023).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1016/j.nima.2023.168334">DOI: 10.1016/j.nima.2023.168334</a></p>
-          </div>
-        </li>
-<li data-kind="journal" id="j11">
-          <span class="pub-label">J11</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1016/j.nima.2023.168244">Evaluation of a resistor-chain-based SiPM detector for positron annihilation lifetime measurement</a></h4>
-            <p class="pub-authors"><strong>H.B. Wang</strong>, X.X. Han, Q.H. Zhao, J.D. Liu, H.J. Zhang, H. Liang, and B.J. Ye</p>
-            <p class="pub-venue"><em>Nuclear Instruments and Methods in Physics Research A</em>, 1052, 168244 (2023).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1016/j.nima.2023.168244">DOI: 10.1016/j.nima.2023.168244</a></p>
-          </div>
-        </li>
-<li data-kind="conference" id="c3">
-          <span class="pub-label">C3</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1109/NSSMICRTSD49126.2023.10338262">A large-size depth-of-interaction encoding BGO detector for low-dose PET imaging</a></h4>
-            <p class="pub-authors"><strong>H. Wang</strong>, J. Xie, J. Qi, S. R. Cherry, and J. Du</p>
-            <p class="pub-venue"><em>2023 IEEE Nuclear Science Symposium, Medical Imaging Conference and International Symposium on Room-Temperature Semiconductor Detectors (NSS MIC RTSD)</em>, Vancouver, BC, Canada (2023).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1109/NSSMICRTSD49126.2023.10338262">DOI: 10.1109/NSSMICRTSD49126.2023.10338262</a></p>
-          </div>
-        </li>
-<li data-kind="conference" id="c4">
-          <span class="pub-label">C4</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1109/NSSMICRTSD49126.2023.10338263">Evaluation of 10 × 10 mm² Linearly Graded SiPMs for High-resolution Small-animal PET</a></h4>
-            <p class="pub-authors">J. Xie, <strong>H. Wang</strong>, S. Merzi, G. Paternoster, A. Gola, S. R. Cherry, and J. Du</p>
-            <p class="pub-venue"><em>2023 IEEE Nuclear Science Symposium, Medical Imaging Conference and International Symposium on Room-Temperature Semiconductor Detectors (NSS MIC RTSD)</em>, Vancouver, BC, Canada (2023).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1109/NSSMICRTSD49126.2023.10338263">DOI: 10.1109/NSSMICRTSD49126.2023.10338263</a></p>
-          </div>
-        </li>
-<li data-kind="conference" id="c5">
-          <span class="pub-label">C5</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1109/NSSMICRTSD49126.2023.10338328">Performance of a PET Detector Based on Multi-resolution SiPM Array</a></h4>
-            <p class="pub-authors">J. Xie, <strong>H. Wang</strong>, S. R. Cherry, and J. Du</p>
-            <p class="pub-venue"><em>2023 IEEE Nuclear Science Symposium, Medical Imaging Conference and International Symposium on Room-Temperature Semiconductor Detectors (NSS MIC RTSD)</em>, Vancouver, BC, Canada (2023).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1109/NSSMICRTSD49126.2023.10338328">DOI: 10.1109/NSSMICRTSD49126.2023.10338328</a></p>
-          </div>
-        </li>
-</ol></div>
-<div class="publication-year" id="year-2022"><h3>2022</h3><ol class="pub-list">
-<li data-kind="journal" id="j12">
-          <span class="pub-label">J12</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1016/j.nima.2022.166921">A new digital positron annihilation lifetime spectrometer for a single piece of micron-thickness film</a></h4>
-            <p class="pub-authors">Q.H. Zhao, X.X. Han, <strong>H.B. Wang</strong>, Y. Dong, Y.H. Li, M. Luo, J.Q. Guo, J.D. Liu, H.J. Zhang, and B.J. Ye</p>
-            <p class="pub-venue"><em>Nuclear Instruments and Methods in Physics Research A</em>, 1038, 166921 (2022).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1016/j.nima.2022.166921">DOI: 10.1016/j.nima.2022.166921</a></p>
-          </div>
-        </li>
-<li data-kind="journal" id="j13">
-          <span class="pub-label">J13</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1016/j.nima.2021.165974">A multi-parameter discrimination digital positron annihilation lifetime spectrometer using a fast digital oscilloscope</a></h4>
-            <p class="pub-authors">Q.H. Zhao, R. Ye, <strong>H.B. Wang</strong>, L.H. Cong, J.D. Liu, H.J. Zhang, and B.J. Ye</p>
-            <p class="pub-venue"><em>Nuclear Instruments and Methods in Physics Research A</em>, 1023, 165974 (2022).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1016/j.nima.2021.165974">DOI: 10.1016/j.nima.2021.165974</a></p>
-          </div>
-        </li>
-</ol></div>
-<div class="publication-year" id="year-2020"><h3>2020</h3><ol class="pub-list">
-<li data-kind="journal" id="j14">
-          <span class="pub-label">J14</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1016/j.nima.2020.163662">A new SiPM-based positron annihilation lifetime spectrometer using LYSO and LFS-3 scintillators</a></h4>
-            <p class="pub-authors"><strong>H.B. Wang</strong>, Q.H. Zhao, H. Liang, B.C. Gu, J.D. Liu, H.J. Zhang, and B.J. Ye</p>
-            <p class="pub-venue"><em>Nuclear Instruments and Methods in Physics Research A</em>, 960, 163662 (2020).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1016/j.nima.2020.163662">DOI: 10.1016/j.nima.2020.163662</a></p>
-          </div>
-        </li>
-<li data-kind="journal" id="j15">
-          <span class="pub-label">J15</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1088/1748-0221/15/11/P11006">Multiple time-over-threshold readout electronics for fast timing and energy resolving in a SiPM-based positron annihilation lifetime spectrometer</a></h4>
-            <p class="pub-authors"><strong>H.B. Wang</strong>, J.D. Liu, H.J. Zhang, H. Liang, and B.J. Ye</p>
-            <p class="pub-venue"><em>Journal of Instrumentation</em>, 15(11), P11006 (2020).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1088/1748-0221/15/11/P11006">DOI: 10.1088/1748-0221/15/11/P11006</a></p>
-          </div>
-        </li>
-<li data-kind="journal" id="j16">
-          <span class="pub-label">J16</span>
-          <div class="pub-content">
-            <h4><a href="https://doi.org/10.1088/1748-0221/15/06/P06001">Coincidence time resolution investigation of BaF₂-based H6610 detectors for a digital positron annihilation lifetime spectrometer</a></h4>
-            <p class="pub-authors">R. Ye, Q.H. Zhao, <strong>H.B. Wang</strong>, B.C. Gu, Z.W. Pan, J.D. Liu, and B.J. Ye</p>
-            <p class="pub-venue"><em>Journal of Instrumentation</em>, 15(6), P06001 (2020).</p>
-            <p class="pub-doi"><a href="https://doi.org/10.1088/1748-0221/15/06/P06001">DOI: 10.1088/1748-0221/15/06/P06001</a></p>
-          </div>
-        </li>
-</ol></div>
-      </section>
-      <section id="service" aria-label="Academic service">
-        
-      <div class="section-heading"><span class="section-number" aria-hidden="true">04</span><h2>Academic service</h2></div>
-      <!-- EDIT SERVICE: Reviewer roles supplied by the author. -->
-      <h3>Journal reviewing</h3>
-      <ul>
-        <li>IEEE Transactions on Instrumentation and Measurement</li>
-        <li>IEEE Transactions on Medical Imaging</li>
-        <li>IEEE Transactions on Nuclear Science</li>
-        <li>IEEE Transactions on Radiation and Plasma Medical Sciences</li>
-        <li>Nuclear Science and Techniques</li>
-        <li>Journal of X-Ray Science and Technology</li>
-        <li>Nuclear Instruments and Methods in Physics Research Section A</li>
-      </ul>
-      <h3>Conference reviewing</h3>
-      <ul>
-        <li>World Molecular Imaging Congress (WMIC), 2025 and 2026</li>
-      </ul>
-    
-      </section>
-      <!-- Teaching and contact sections can be completed after their public details are confirmed. -->
-      <section id="teaching" hidden><h2>Teaching</h2><p>To be added.</p></section>
-      <section id="contact" hidden><h2>Contact</h2><p>To be added.</p></section>
-      <footer>
-        <p>Haibo Wang · Personal academic website</p>
-        <p><a href="https://haibowanglab.github.io/academic/personal/">https://haibowanglab.github.io/academic/personal/</a></p>
-        <div class="footer-row"><a href="../">Academic pages</a><a href="#top">Back to top ↑</a></div>
-      </footer>
-    </main>
-  </div>
+        </div>
+      </div>
+    </section>
+    <!-- Teaching and contact sections can be added after their public details are confirmed. -->
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Haibo Wang</span>
+      <span><a href="../">Academic pages</a>&nbsp;&nbsp;&nbsp;<a href="#top">Back to top</a></span>
+    </div>
+  </footer>
+
   <script>
     (() => {
-      const filterGroup = document.querySelector('.filters');
-      const buttons = [...filterGroup.querySelectorAll('button')];
-      const years = [...document.querySelectorAll('.publication-year')];
+      const group = document.querySelector('.filters');
+      const buttons = [...group.querySelectorAll('button')];
+      const years = [...document.querySelectorAll('.pub-year')];
+      const items = [...document.querySelectorAll('.pub[data-kind]')];
       const status = document.querySelector('.filter-status');
-      filterGroup.hidden = false;
+      const countOf = kind => items.filter(i => kind === 'all' || i.dataset.kind === kind).length;
+      buttons.forEach(b => { b.querySelector('.count').textContent = countOf(b.dataset.filter); });
+      group.hidden = false;
       buttons.forEach(button => button.addEventListener('click', () => {
         const kind = button.dataset.filter;
-        buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-        let visibleCount = 0;
-        years.forEach(group => {
-          let groupCount = 0;
-          group.querySelectorAll('li[data-kind]').forEach(item => {
+        buttons.forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+        years.forEach(year => {
+          let n = 0;
+          year.querySelectorAll('.pub').forEach(item => {
             item.hidden = kind !== 'all' && item.dataset.kind !== kind;
-            if (!item.hidden) groupCount++;
+            if (!item.hidden) n++;
           });
-          group.hidden = groupCount === 0;
-          visibleCount += groupCount;
-          const yearLink = document.querySelector('.year-links a[href="#' + group.id + '"]');
-          if (yearLink) yearLink.hidden = group.hidden;
+          year.hidden = n === 0;
+          const link = document.querySelector('.year-links a[href="#' + year.id + '"]');
+          if (link) link.hidden = year.hidden;
         });
-        status.textContent = visibleCount + ' publications shown.';
-        document.getElementById('publications').scrollIntoView({ block: 'start' });
+        status.textContent = countOf(kind) + ' publications shown.';
       }));
-      const links = [...document.querySelectorAll('nav a')];
-      const sections = [...document.querySelectorAll('main > section:not([hidden])')];
-      let scrollPending = false;
-      function updateNavigation() {
-        let current = sections[0];
-        sections.forEach(section => {
-          if (section.getBoundingClientRect().top <= 130) current = section;
+
+      const links = [...document.querySelectorAll('.topbar nav a')];
+      const sections = links.map(l => document.querySelector(l.getAttribute('href')));
+      let pending = false;
+      function update() {
+        let current = null;
+        sections.forEach(s => { if (s.getBoundingClientRect().top <= 120) current = s; });
+        if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) current = sections[sections.length - 1];
+        links.forEach(l => {
+          if (current && l.getAttribute('href') === '#' + current.id) l.setAttribute('aria-current', 'location');
+          else l.removeAttribute('aria-current');
         });
-        links.forEach(link => {
-          if (link.getAttribute('href') === '#' + current.id) link.setAttribute('aria-current', 'location');
-          else link.removeAttribute('aria-current');
-        });
-        scrollPending = false;
+        pending = false;
       }
-      window.addEventListener('scroll', () => {
-        if (!scrollPending) {
-          scrollPending = true;
-          window.requestAnimationFrame(updateNavigation);
-        }
-      }, { passive: true });
-      updateNavigation();
+      window.addEventListener('scroll', () => { if (!pending) { pending = true; requestAnimationFrame(update); } }, { passive: true });
+      update();
     })();
   </script>
 </body>
