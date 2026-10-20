@@ -65,12 +65,11 @@
     .about-text { max-width: 44em; margin: 0; font: 400 22px/1.65 var(--serif); color: var(--ink); }
 
     /* Research */
-    .themes { display: grid; gap: 48px; }
-    .theme { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 40px; align-items: start; margin: 0; }
-    .theme + .theme { padding-top: 48px; border-top: 1px solid var(--rule); }
+    .themes { display: grid; gap: 32px; }
+    .theme { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 420px); gap: 40px; align-items: center; margin: 0; }
+    .theme + .theme { padding-top: 32px; border-top: 1px solid var(--rule); }
     .theme h3 { margin: 0 0 10px; font: 600 20px/1.4 var(--sans); color: var(--ink); }
     .theme p { margin: 0; color: var(--text); }
-    .theme .apps { margin-top: 14px; font-size: 16px; color: var(--muted); }
     .plate { margin: 0; }
     .plate svg { display: block; width: 100%; height: auto; background: var(--plate); border: 1px solid var(--rule); }
     .plate figcaption { margin-top: 10px; font-size: 15px; line-height: 1.6; color: var(--muted); }
@@ -222,8 +221,7 @@
           <article class="theme">
             <div>
               <h3>Detection and imaging</h3>
-              <p>Scintillator and silicon photomultiplier (SiPM) detectors with time-of-flight and depth-of-interaction capability, and their integration into imaging systems.</p>
-              <p class="apps">Applications: PET, SPECT</p>
+              <p>Scintillator–SiPM detectors with time-of-flight and depth-of-interaction capability for PET and SPECT.</p>
             </div>
             <figure class="plate">
               <svg class="fig" viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-t">
@@ -284,70 +282,53 @@
                 <text class="lbl" x="418" y="186">DOI</text>
                 <text class="lbl-s" x="348" y="268" text-anchor="middle">Dual-ended readout module</text>
               </svg>
-              <figcaption><b>Fig. 1.</b> A ring imaging system and a detector module read out at both ends of the scintillator array; the signal ratio between the two ends encodes the depth of interaction (DOI).</figcaption>
+              <figcaption><b>Fig. 1.</b> Ring imaging system and dual-ended readout module.</figcaption>
             </figure>
           </article>
 
           <article class="theme">
             <div>
               <h3>Readout electronics</h3>
-              <p>Front-end and digital readout for timing, energy and position measurement, including time-over-threshold methods, timing correction and FPGA-based data acquisition.</p>
-              <p class="apps">Applications: PET and SPECT detectors, lifetime spectrometers</p>
+              <p>Front-end, digitisation and FPGA-based acquisition for timing, energy and position measurement.</p>
             </div>
             <figure class="plate">
-              <svg class="fig" viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig2-t">
-                <title id="fig2-t">Schematic readout chain from SiPM detector through front-end and digitisation to FPGA data acquisition, and a detector pulse crossing three thresholds whose crossing times give the time over threshold.</title>
-                <defs>
-                  <marker id="f2-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#4b6b7d"/></marker>
-                </defs>
-                <!-- chain -->
-                <g stroke="#3f6578" stroke-width="1.2">
-                  <rect x="18" y="24" width="88" height="48" fill="#dbe7ee"/>
-                  <rect x="132" y="24" width="96" height="48" fill="#dbe7ee"/>
-                  <rect x="254" y="24" width="96" height="48" fill="#dbe7ee"/>
-                  <rect x="376" y="24" width="86" height="48" fill="#1f4e6a"/>
-                </g>
-                <g stroke="#4b6b7d" stroke-width="1.4" marker-end="url(#f2-arr)">
-                  <line x1="106" y1="48" x2="130" y2="48"/><line x1="228" y1="48" x2="252" y2="48"/><line x1="350" y1="48" x2="374" y2="48"/>
-                </g>
+              <svg class="fig" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig2-t">
+                <title id="fig2-t">Schematic multichannel readout chain: SiPM array channels pass through front-end amplifiers and discriminators, are digitised by TDC and ADC, and are processed by an FPGA that outputs timing, energy and position data.</title>
+                <defs><marker id="f2-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4b6b7d"/></marker></defs>
+                <!-- SiPM array -->
+                <g fill="#1f4e6a"><rect x="24" y="42" width="30" height="22"/><rect x="24" y="70" width="30" height="22"/><rect x="24" y="98" width="30" height="22"/><rect x="24" y="126" width="30" height="22"/></g>
+                <!-- channel lines to amplifiers -->
+                <g stroke="#ad7428" stroke-width="1.5"><line x1="54" y1="53" x2="104" y2="53"/><line x1="54" y1="81" x2="104" y2="81"/><line x1="54" y1="109" x2="104" y2="109"/><line x1="54" y1="137" x2="104" y2="137"/></g>
+                <!-- front-end box with amplifier triangles -->
+                <rect x="94" y="30" width="96" height="130" fill="#dbe7ee" stroke="#3f6578" stroke-width="1.2"/>
+                <g fill="#fff" stroke="#3f6578" stroke-width="1.2"><path d="M106 45 L106 61 L124 53Z"/><path d="M106 73 L106 89 L124 81Z"/><path d="M106 101 L106 117 L124 109Z"/><path d="M106 129 L106 145 L124 137Z"/></g>
+                <g stroke="#3f6578" stroke-width="1.2" fill="none"><path d="M124 53 H140 M124 81 H140 M124 109 H140 M124 137 H140"/></g>
+                <g fill="#fff" stroke="#3f6578" stroke-width="1.2"><rect x="140" y="45" width="36" height="16"/><rect x="140" y="73" width="36" height="16"/><rect x="140" y="101" width="36" height="16"/><rect x="140" y="129" width="36" height="16"/></g>
+                <!-- bus to digitiser -->
+                <g stroke="#4b6b7d" stroke-width="1.2"><path d="M176 53 H206 M176 81 H206 M176 109 H206 M176 137 H206"/></g>
+                <rect x="206" y="30" width="80" height="130" fill="#dbe7ee" stroke="#3f6578" stroke-width="1.2"/>
+                <line x1="286" y1="95" x2="312" y2="95" stroke="#4b6b7d" stroke-width="1.4" marker-end="url(#f2-arr)"/>
+                <rect x="314" y="54" width="78" height="82" fill="#1f4e6a"/>
+                <line x1="392" y1="95" x2="418" y2="95" stroke="#4b6b7d" stroke-width="1.4" marker-end="url(#f2-arr)"/>
                 <g class="lbl" text-anchor="middle">
-                  <text x="62" y="53">SiPM</text>
-                  <text x="180" y="53">Front-end</text>
-                  <text x="302" y="53">TDC / ADC</text>
-                  <text x="419" y="53" style="fill:#fff">FPGA</text>
+                  <text x="246" y="90">TDC</text><text x="246" y="110">ADC</text>
+                  <text x="353" y="100" style="fill:#fff">FPGA</text>
                 </g>
-                <text class="lbl-s" x="62" y="92" text-anchor="middle">detector</text>
-                <text class="lbl-s" x="180" y="92" text-anchor="middle">amplify, shape</text>
-                <text class="lbl-s" x="302" y="92" text-anchor="middle">digitise</text>
-                <text class="lbl-s" x="419" y="92" text-anchor="middle">DAQ</text>
-                <!-- pulse and thresholds -->
-                <line x1="40" y1="246" x2="456" y2="246" stroke="#7f9cad" stroke-width="1"/>
-                <line x1="40" y1="246" x2="40" y2="118" stroke="#7f9cad" stroke-width="1"/>
-                <g stroke="#9fb0ba" stroke-width="1" stroke-dasharray="4 4">
-                  <line x1="40" y1="222" x2="430" y2="222"/>
-                  <line x1="40" y1="190" x2="430" y2="190"/>
-                  <line x1="40" y1="156" x2="430" y2="156"/>
+                <g class="lbl-s">
+                  <text x="422" y="80">time</text><text x="422" y="99">energy</text><text x="422" y="118">position</text>
                 </g>
-                <polyline points="40,246 86.0,246.0 88.0,244.6 90.0,240.9 92.0,235.4 94.0,228.6 96.0,221.1 98.0,212.9 100.0,204.6 102.0,196.3 104.0,188.1 106.0,180.2 108.0,172.8 110.0,165.8 112.0,159.4 114.0,153.6 116.0,148.4 118.0,143.9 120.0,139.9 122.0,136.6 124.0,133.8 126.0,131.6 128.0,130.0 130.0,128.9 132.0,128.2 134.0,128.0 136.0,128.2 138.0,128.8 140.0,129.7 142.0,130.9 144.0,132.4 146.0,134.2 148.0,136.1 150.0,138.3 152.0,140.6 154.0,143.1 156.0,145.7 158.0,148.3 160.0,151.1 162.0,153.9 164.0,156.7 166.0,159.6 168.0,162.5 170.0,165.4 172.0,168.2 174.0,171.1 176.0,173.9 178.0,176.7 180.0,179.4 182.0,182.1 184.0,184.8 186.0,187.3 188.0,189.8 190.0,192.3 192.0,194.7 194.0,197.0 196.0,199.2 198.0,201.4 200.0,203.5 202.0,205.5 204.0,207.4 206.0,209.3 208.0,211.1 210.0,212.8 212.0,214.5 214.0,216.1 216.0,217.6 218.0,219.1 220.0,220.5 222.0,221.8 224.0,223.1 226.0,224.3 228.0,225.4 230.0,226.5 232.0,227.6 234.0,228.6 236.0,229.6 238.0,230.5 240.0,231.3 242.0,232.2 244.0,232.9 246.0,233.7 248.0,234.4 250.0,235.0 252.0,235.7 254.0,236.3 256.0,236.8 258.0,237.4 260.0,237.9 262.0,238.3 264.0,238.8 266.0,239.2 268.0,239.6 270.0,240.0 272.0,240.4 274.0,240.7 276.0,241.0 278.0,241.3 280.0,241.6 282.0,241.9 284.0,242.1 286.0,242.4 288.0,242.6 290.0,242.8 292.0,243.0 294.0,243.2 296.0,243.4 298.0,243.5 300.0,243.7 302.0,243.8 304.0,244.0 306.0,244.1 308.0,244.2 310.0,244.3 312.0,244.4 314.0,244.5 316.0,244.6 318.0,244.7 320.0,244.8 322.0,244.9 324.0,244.9 326.0,245.0 328.0,245.1 330.0,245.1 332.0,245.2 334.0,245.2 336.0,245.3 338.0,245.3 340.0,245.4 342.0,245.4 344.0,245.5 346.0,245.5 348.0,245.5 350.0,245.6 352.0,245.6 354.0,245.6 356.0,245.6 358.0,245.7 360.0,245.7 362.0,245.7 364.0,245.7 366.0,245.7 368.0,245.8 370.0,245.8 372.0,245.8 374.0,245.8 376.0,245.8 378.0,245.8 380.0,245.8 382.0,245.9 384.0,245.9 386.0,245.9 388.0,245.9 390.0,245.9 392.0,245.9 394.0,245.9 396.0,245.9 398.0,245.9 400.0,245.9 402.0,245.9 404.0,245.9 406.0,245.9 408.0,245.9 410.0,245.9 412.0,245.9 414.0,246.0 416.0,246.0 418.0,246.0 420.0,246.0 422.0,246.0 424.0,246.0 426.0,246.0 428.0,246.0 430.0,246.0 432.0,246.0 434.0,246.0 436.0,246.0 438.0,246.0 440.0,246.0 442.0,246.0 444.0,246.0 446.0,246.0 448.0,246.0 450.0,246.0 452.0,246.0 454.0,246.0 456.0,246.0" fill="none" stroke="#1f4e6a" stroke-width="2.2" stroke-linejoin="round"/>
-                <!-- crossing marks: computed on the pulse curve -->
-                <g fill="#ad7428"><circle cx="96.0" cy="222" r="3.4"/><circle cx="222.2" cy="222" r="3.4"/><circle cx="103.8" cy="190" r="3.4"/><circle cx="188.0" cy="190" r="3.4"/><circle cx="113.2" cy="156" r="3.4"/><circle cx="163.2" cy="156" r="3.4"/></g>
-                <!-- ToT for lowest threshold -->
-                <path d="M96.0 262 H222.2" stroke="#ad7428" stroke-width="1.4" marker-start="url(#f2-arr)" marker-end="url(#f2-arr)"/>
-                <text class="lbl lbl-sig" x="159" y="277" text-anchor="middle">time over threshold</text>
-                <g class="lbl-s" text-anchor="start">
-                  <text x="436" y="226">V₁</text><text x="436" y="194">V₂</text><text x="436" y="160">V₃</text>
+                <g class="lbl-s" text-anchor="middle">
+                  <text x="39" y="182">SiPM array</text><text x="142" y="182">Front-end</text><text x="246" y="182">Digitisation</text><text x="353" y="182">Processing</text>
                 </g>
-                <text class="lbl-s math" x="452" y="262" text-anchor="end">t</text>
               </svg>
-              <figcaption><b>Fig. 2.</b> Readout chain, and a detector pulse sampled at several thresholds; the crossing times carry timing information and the time over threshold relates to pulse amplitude.</figcaption>
+              <figcaption><b>Fig. 2.</b> Multichannel readout chain.</figcaption>
             </figure>
           </article>
 
           <article class="theme">
             <div>
               <h3>Positron annihilation spectroscopy</h3>
-              <p>SiPM-based detectors, coincidence systems and digital spectrometers for positron annihilation lifetime measurement in materials studies.</p>
-              <p class="apps">Applications: materials characterisation, thin films</p>
+              <p>SiPM-based coincidence systems and digital spectrometers for positron lifetime measurement.</p>
             </div>
             <figure class="plate">
               <svg class="fig" viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig3-t">
@@ -386,7 +367,7 @@
                 <text class="lbl-s math" x="366" y="266" text-anchor="middle">t₁</text>
                 <text class="lbl-s" x="240" y="212" text-anchor="middle">positron lifetime</text>
               </svg>
-              <figcaption><b>Fig. 3.</b> Lifetime measurement with a ²²Na source: the 1.27 MeV γ ray emitted with the positron gives the start signal and a 511 keV annihilation γ ray gives the stop signal.</figcaption>
+              <figcaption><b>Fig. 3.</b> Lifetime measurement with a ²²Na source.</figcaption>
             </figure>
           </article>
 
