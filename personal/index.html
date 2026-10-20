@@ -74,8 +74,8 @@
     .footer-row { display:flex; justify-content:space-between; gap:18px; margin-top:12px; }
     @media(max-width:1020px) { .page-shell { gap:44px; grid-template-columns:210px minmax(0,1fr); padding:44px 32px 0; } .profile h1 { font-size:35px; } }
     @media(max-width:800px) { .page-shell { display:block; max-width:780px; padding:30px 26px 0; } .profile { position:static; padding-top:20px; margin-bottom:42px; } .profile h1 { font-size:40px; } .profile-summary { margin:16px 0 18px; } nav { flex-direction:row; flex-wrap:wrap; gap:10px 23px; padding-top:15px; } nav a { padding:3px 0; } .profile-links { margin-top:16px; padding-top:14px; } section { padding-bottom:34px; margin-bottom:32px; } }
-    @media(max-width:480px) { .page-shell { padding-left:22px; padding-right:22px; } .about-lead { font-size:19px; } h2 { font-size:29px; } .section-heading { gap:12px; } .education { padding:18px; } .education-row { gap:12px; } .pub-list li { grid-template-columns:28px minmax(0,1fr); gap:10px; } .pub-content h4 { font-size:18px; } .publication-tools { align-items:flex-start; } .footer-row { flex-wrap:wrap; } }
-    @media print { body { font-size:12pt; } .page-shell { display:block; padding:0; max-width:none; } .profile { position:static; margin-bottom:28px; border-top:0; } nav, .profile-links, .publication-tools, .year-links, .skip-link, .footer-row { display:none !important; } .profile-summary { margin:10px 0; } section { margin-bottom:24px; padding-bottom:24px; } .pub-list li, .research-topic, .education-row { break-inside:avoid; } .pub-content h4 { font-size:12pt; } .pub-authors, .pub-venue, .pub-doi { font-size:10pt; } a { color:inherit; text-decoration:none; } }
+    @media(max-width:480px) { .page-shell { padding-left:22px; padding-right:22px; } .about-lead { font-size:19px; } h2 { font-size:29px; } .section-heading { gap:12px; } .pub-list li { grid-template-columns:28px minmax(0,1fr); gap:10px; } .pub-content h4 { font-size:18px; } .publication-tools { align-items:flex-start; } .footer-row { flex-wrap:wrap; } }
+    @media print { body { font-size:12pt; } .page-shell { display:block; padding:0; max-width:none; } .profile { position:static; margin-bottom:28px; border-top:0; } nav, .profile-links, .publication-tools, .year-links, .skip-link, .footer-row { display:none !important; } .profile-summary { margin:10px 0; } section { margin-bottom:24px; padding-bottom:24px; } .pub-list li, .research-topic { break-inside:avoid; } .pub-content h4 { font-size:12pt; } .pub-authors, .pub-venue, .pub-doi { font-size:10pt; } a { color:inherit; text-decoration:none; } }
   </style>
 </head>
 <body id="top">
@@ -97,7 +97,7 @@
     <main id="main">
       <section id="about" aria-labelledby="about-title">
         <div class="section-heading"><span class="section-number" aria-hidden="true">01</span><h2 id="about-title">About</h2></div>
-        <!-- EDIT ABOUT: Biography based on the CV; no current appointment is assumed. -->
+        <!-- EDIT ABOUT: Research introduction based on the CV. -->
         <p class="about-lead">I work on detection and imaging technologies, readout electronics and related systems.</p>
         <p class="about-bio">My research spans detector design, electronics development, system integration and measurement methods. Applications I have worked on include positron emission tomography (PET), single-photon emission computed tomography (SPECT) and positron annihilation spectroscopy. I am also interested in extending these technologies and methods to other applications.</p>
       </section>
@@ -382,20 +382,27 @@
         status.textContent = visibleCount + ' publications shown.';
         document.getElementById('publications').scrollIntoView({ block: 'start' });
       }));
-      if ('IntersectionObserver' in window) {
-        const links = [...document.querySelectorAll('nav a')];
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              links.forEach(link => {
-                if (link.getAttribute('href') === '#' + entry.target.id) link.setAttribute('aria-current', 'location');
-                else link.removeAttribute('aria-current');
-              });
-            }
-          });
-        }, { rootMargin: '-8% 0px -55% 0px', threshold: 0 });
-        document.querySelectorAll('main > section:not([hidden])').forEach(section => observer.observe(section));
+      const links = [...document.querySelectorAll('nav a')];
+      const sections = [...document.querySelectorAll('main > section:not([hidden])')];
+      let scrollPending = false;
+      function updateNavigation() {
+        let current = sections[0];
+        sections.forEach(section => {
+          if (section.getBoundingClientRect().top <= 130) current = section;
+        });
+        links.forEach(link => {
+          if (link.getAttribute('href') === '#' + current.id) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+        scrollPending = false;
       }
+      window.addEventListener('scroll', () => {
+        if (!scrollPending) {
+          scrollPending = true;
+          window.requestAnimationFrame(updateNavigation);
+        }
+      }, { passive: true });
+      updateNavigation();
     })();
   </script>
 </body>
