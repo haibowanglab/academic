@@ -65,11 +65,12 @@
 
     /* Research */
     .themes { display: grid; gap: 32px; }
-    .theme { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 420px); gap: 40px; align-items: center; margin: 0; }
+    .theme { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 420px); gap: 40px; align-items: start; margin: 0; }
     .theme + .theme { padding-top: 32px; border-top: 1px solid var(--rule); }
     .theme h3 { margin: 0 0 10px; font: 600 20px/1.4 var(--sans); color: var(--ink); }
     .theme p { margin: 0; color: var(--text); }
     .plate { margin: 0; }
+    .plates { display: grid; gap: 28px; }
     .plate svg { display: block; width: 100%; height: auto; background: var(--plate); border: 1px solid var(--rule); }
     .plate figcaption { margin-top: 10px; font-size: 15px; line-height: 1.6; color: var(--muted); }
     .plate figcaption b { font-weight: 600; color: var(--ink); }
@@ -219,8 +220,9 @@
           <article class="theme">
             <div>
               <h3>Detection and imaging</h3>
-              <p>Scintillator–SiPM detectors with time-of-flight and depth-of-interaction capability.</p>
+              <p>Scintillator–SiPM detectors with time-of-flight and depth-of-interaction capability, and coincidence systems for positron annihilation lifetime measurement.</p>
             </div>
+            <div class="plates">
             <figure class="plate">
               <svg class="fig" viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-t">
                 <title id="fig1-t">Schematic of a ring imaging system and a dual-ended readout detector module, with SiPM arrays on both ends of a scintillator array and depth of interaction indicated along the crystals.</title>
@@ -282,52 +284,6 @@
               </svg>
               <figcaption><b>Fig. 1.</b> Ring imaging system and dual-ended readout module.</figcaption>
             </figure>
-          </article>
-
-          <article class="theme">
-            <div>
-              <h3>Readout electronics</h3>
-              <p>Front-end, digitisation and FPGA-based acquisition for timing, energy and position measurement.</p>
-            </div>
-            <figure class="plate">
-              <svg class="fig" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig2-t">
-                <title id="fig2-t">Schematic multichannel readout chain: SiPM array channels pass through front-end amplifiers and discriminators, are digitised by TDC and ADC, and are processed by an FPGA that outputs timing, energy and position data.</title>
-                <defs><marker id="f2-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4b6b7d"/></marker></defs>
-                <!-- SiPM array -->
-                <g fill="#1f4e6a"><rect x="24" y="42" width="30" height="22"/><rect x="24" y="70" width="30" height="22"/><rect x="24" y="98" width="30" height="22"/><rect x="24" y="126" width="30" height="22"/></g>
-                <!-- channel lines to amplifiers -->
-                <g stroke="#ad7428" stroke-width="1.5"><line x1="54" y1="53" x2="104" y2="53"/><line x1="54" y1="81" x2="104" y2="81"/><line x1="54" y1="109" x2="104" y2="109"/><line x1="54" y1="137" x2="104" y2="137"/></g>
-                <!-- front-end box with amplifier triangles -->
-                <rect x="94" y="30" width="96" height="130" fill="#dbe7ee" stroke="#3f6578" stroke-width="1.2"/>
-                <g fill="#fff" stroke="#3f6578" stroke-width="1.2"><path d="M106 45 L106 61 L124 53Z"/><path d="M106 73 L106 89 L124 81Z"/><path d="M106 101 L106 117 L124 109Z"/><path d="M106 129 L106 145 L124 137Z"/></g>
-                <g stroke="#3f6578" stroke-width="1.2" fill="none"><path d="M124 53 H140 M124 81 H140 M124 109 H140 M124 137 H140"/></g>
-                <g fill="#fff" stroke="#3f6578" stroke-width="1.2"><rect x="140" y="45" width="36" height="16"/><rect x="140" y="73" width="36" height="16"/><rect x="140" y="101" width="36" height="16"/><rect x="140" y="129" width="36" height="16"/></g>
-                <!-- bus to digitiser -->
-                <g stroke="#4b6b7d" stroke-width="1.2"><path d="M176 53 H206 M176 81 H206 M176 109 H206 M176 137 H206"/></g>
-                <rect x="206" y="30" width="80" height="130" fill="#dbe7ee" stroke="#3f6578" stroke-width="1.2"/>
-                <line x1="286" y1="95" x2="312" y2="95" stroke="#4b6b7d" stroke-width="1.4" marker-end="url(#f2-arr)"/>
-                <rect x="314" y="54" width="78" height="82" fill="#1f4e6a"/>
-                <line x1="392" y1="95" x2="418" y2="95" stroke="#4b6b7d" stroke-width="1.4" marker-end="url(#f2-arr)"/>
-                <g class="lbl" text-anchor="middle">
-                  <text x="246" y="90">TDC</text><text x="246" y="110">ADC</text>
-                  <text x="353" y="100" style="fill:#fff">FPGA</text>
-                </g>
-                <g class="lbl-s">
-                  <text x="422" y="80">time</text><text x="422" y="99">energy</text><text x="422" y="118">position</text>
-                </g>
-                <g class="lbl-s" text-anchor="middle">
-                  <text x="39" y="182">SiPM array</text><text x="142" y="182">Front-end</text><text x="246" y="182">Digitisation</text><text x="353" y="182">Processing</text>
-                </g>
-              </svg>
-              <figcaption><b>Fig. 2.</b> Multichannel readout chain.</figcaption>
-            </figure>
-          </article>
-
-          <article class="theme">
-            <div>
-              <h3>Positron annihilation spectroscopy</h3>
-              <p>SiPM-based coincidence systems and digital spectrometers for positron lifetime measurement.</p>
-            </div>
             <figure class="plate">
               <svg class="fig" viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig3-t">
                 <title id="fig3-t">Schematic of a positron annihilation lifetime measurement: a sodium-22 source between two sample pieces; a 1.27 MeV gamma ray reaches the start detector and a 511 keV annihilation gamma ray reaches the stop detector; the time difference between the two signals is the positron lifetime.</title>
@@ -365,7 +321,47 @@
                 <text class="lbl-s math" x="366" y="266" text-anchor="middle">t₁</text>
                 <text class="lbl-s" x="240" y="212" text-anchor="middle">positron lifetime</text>
               </svg>
-              <figcaption><b>Fig. 3.</b> Lifetime measurement with a ²²Na source.</figcaption>
+              <figcaption><b>Fig. 2.</b> Lifetime measurement with a ²²Na source.</figcaption>
+            </figure>
+            </div>
+          </article>
+
+          <article class="theme">
+            <div>
+              <h3>Readout electronics</h3>
+              <p>Front-end, digitisation and FPGA-based acquisition for timing, energy and position measurement.</p>
+            </div>
+            <figure class="plate">
+              <svg class="fig" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig2-t">
+                <title id="fig2-t">Schematic multichannel readout chain: SiPM array channels pass through front-end amplifiers and discriminators, are digitised by TDC and ADC, and are processed by an FPGA that outputs timing, energy and position data.</title>
+                <defs><marker id="f2-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#4b6b7d"/></marker></defs>
+                <!-- SiPM array -->
+                <g fill="#1f4e6a"><rect x="24" y="42" width="30" height="22"/><rect x="24" y="70" width="30" height="22"/><rect x="24" y="98" width="30" height="22"/><rect x="24" y="126" width="30" height="22"/></g>
+                <!-- channel lines to amplifiers -->
+                <g stroke="#ad7428" stroke-width="1.5"><line x1="54" y1="53" x2="104" y2="53"/><line x1="54" y1="81" x2="104" y2="81"/><line x1="54" y1="109" x2="104" y2="109"/><line x1="54" y1="137" x2="104" y2="137"/></g>
+                <!-- front-end box with amplifier triangles -->
+                <rect x="94" y="30" width="96" height="130" fill="#dbe7ee" stroke="#3f6578" stroke-width="1.2"/>
+                <g fill="#fff" stroke="#3f6578" stroke-width="1.2"><path d="M106 45 L106 61 L124 53Z"/><path d="M106 73 L106 89 L124 81Z"/><path d="M106 101 L106 117 L124 109Z"/><path d="M106 129 L106 145 L124 137Z"/></g>
+                <g stroke="#3f6578" stroke-width="1.2" fill="none"><path d="M124 53 H140 M124 81 H140 M124 109 H140 M124 137 H140"/></g>
+                <g fill="#fff" stroke="#3f6578" stroke-width="1.2"><rect x="140" y="45" width="36" height="16"/><rect x="140" y="73" width="36" height="16"/><rect x="140" y="101" width="36" height="16"/><rect x="140" y="129" width="36" height="16"/></g>
+                <!-- bus to digitiser -->
+                <g stroke="#4b6b7d" stroke-width="1.2"><path d="M176 53 H206 M176 81 H206 M176 109 H206 M176 137 H206"/></g>
+                <rect x="206" y="30" width="80" height="130" fill="#dbe7ee" stroke="#3f6578" stroke-width="1.2"/>
+                <line x1="286" y1="95" x2="312" y2="95" stroke="#4b6b7d" stroke-width="1.4" marker-end="url(#f2-arr)"/>
+                <rect x="314" y="54" width="78" height="82" fill="#1f4e6a"/>
+                <line x1="392" y1="95" x2="418" y2="95" stroke="#4b6b7d" stroke-width="1.4" marker-end="url(#f2-arr)"/>
+                <g class="lbl" text-anchor="middle">
+                  <text x="246" y="90">TDC</text><text x="246" y="110">ADC</text>
+                  <text x="353" y="100" style="fill:#fff">FPGA</text>
+                </g>
+                <g class="lbl-s">
+                  <text x="422" y="80">time</text><text x="422" y="99">energy</text><text x="422" y="118">position</text>
+                </g>
+                <g class="lbl-s" text-anchor="middle">
+                  <text x="39" y="182">SiPM array</text><text x="142" y="182">Front-end</text><text x="246" y="182">Digitisation</text><text x="353" y="182">Processing</text>
+                </g>
+              </svg>
+              <figcaption><b>Fig. 3.</b> Multichannel readout chain.</figcaption>
             </figure>
           </article>
 

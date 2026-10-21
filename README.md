@@ -7,7 +7,7 @@ Public page: https://haibowanglab.github.io/academic/personal/
 编辑 `personal/index.html`，可查找下列注释：
 
 - `EDIT ABOUT`：一至两句研究简介，不包含教育或工作经历。
-- `EDIT RESEARCH`：三个研究主题及简短说明；每个主题配一幅内嵌 SVG 示意图（Fig. 1–3），仅为原理示意，不含实验数据。
+- `EDIT RESEARCH`：两个研究主题（Detection and imaging、Readout electronics）及简短说明，配三幅内嵌 SVG 示意图（Fig. 1–3），仅为原理示意，不含实验数据。
 - `EDIT PUBLICATIONS`：论文条目；期刊论文和会议论文合并，按年份倒序。J 表示期刊，C 表示会议。
 - `EDIT SERVICE`：审稿等学术服务。
 
