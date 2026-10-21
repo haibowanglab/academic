@@ -70,7 +70,6 @@
     .theme h3 { margin: 0 0 10px; font: 600 20px/1.4 var(--sans); color: var(--ink); }
     .theme p { margin: 0; color: var(--text); }
     .plate { margin: 0; }
-    .plates { display: grid; gap: 28px; }
     .plate svg { display: block; width: 100%; height: auto; background: var(--plate); border: 1px solid var(--rule); }
     .plate figcaption { margin-top: 10px; font-size: 15px; line-height: 1.6; color: var(--muted); }
     .plate figcaption b { font-weight: 600; color: var(--ink); }
@@ -222,10 +221,11 @@
               <h3>Detection and imaging</h3>
               <p>Scintillator–SiPM detectors with time-of-flight and depth-of-interaction capability, and coincidence systems for positron annihilation lifetime measurement.</p>
             </div>
-            <div class="plates">
             <figure class="plate">
-              <svg class="fig" viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-t">
-                <title id="fig1-t">Schematic of a ring imaging system and a dual-ended readout detector module, with SiPM arrays on both ends of a scintillator array and depth of interaction indicated along the crystals.</title>
+              <svg class="fig" viewBox="0 0 480 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-t">
+                <title id="fig1-t">Two-panel schematic. (a) A ring imaging system and a dual-ended readout detector module, with SiPM arrays on both ends of a scintillator array and depth of interaction indicated along the crystals. (b) A positron annihilation lifetime measurement: a sodium-22 source between two sample pieces; a 1.27 MeV gamma ray reaches the start detector and a 511 keV annihilation gamma ray reaches the stop detector; the time difference between the two signals is the positron lifetime.</title>
+                <text class="lbl" x="12" y="24" style="font-weight:600">(a)</text>
+                <g>
                 <defs>
                   <marker id="f1-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#4b6b7d"/></marker>
                   <marker id="f1-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#ad7428"/></marker>
@@ -281,12 +281,11 @@
                 <text class="lbl" x="404" y="238">SiPM</text>
                 <text class="lbl" x="418" y="186">DOI</text>
                 <text class="lbl-s" x="348" y="268" text-anchor="middle">Dual-ended readout module</text>
-              </svg>
-              <figcaption><b>Fig. 1.</b> Ring imaging system and dual-ended readout module.</figcaption>
-            </figure>
-            <figure class="plate">
-              <svg class="fig" viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig3-t">
-                <title id="fig3-t">Schematic of a positron annihilation lifetime measurement: a sodium-22 source between two sample pieces; a 1.27 MeV gamma ray reaches the start detector and a 511 keV annihilation gamma ray reaches the stop detector; the time difference between the two signals is the positron lifetime.</title>
+              
+                </g>
+                <line x1="16" y1="290" x2="464" y2="290" stroke="#c9d4da" stroke-width="1"/>
+                <text class="lbl" x="12" y="316" style="font-weight:600">(b)</text>
+                <g transform="translate(0 280)">
                 <defs>
                   <marker id="f3-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#ad7428"/></marker>
                   <marker id="f3-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#4b6b7d"/></marker>
@@ -320,10 +319,11 @@
                 <text class="lbl-s math" x="94" y="266" text-anchor="middle">t₀</text>
                 <text class="lbl-s math" x="366" y="266" text-anchor="middle">t₁</text>
                 <text class="lbl-s" x="240" y="212" text-anchor="middle">positron lifetime</text>
+              
+                </g>
               </svg>
-              <figcaption><b>Fig. 2.</b> Lifetime measurement with a ²²Na source.</figcaption>
+              <figcaption><b>Fig. 1.</b> (a) Ring imaging system and dual-ended readout module. (b) Lifetime measurement with a ²²Na source.</figcaption>
             </figure>
-            </div>
           </article>
 
           <article class="theme">
@@ -361,7 +361,7 @@
                   <text x="39" y="182">SiPM array</text><text x="142" y="182">Front-end</text><text x="246" y="182">Digitisation</text><text x="353" y="182">Processing</text>
                 </g>
               </svg>
-              <figcaption><b>Fig. 3.</b> Multichannel readout chain.</figcaption>
+              <figcaption><b>Fig. 2.</b> Multichannel readout chain.</figcaption>
             </figure>
           </article>
 
