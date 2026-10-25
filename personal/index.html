@@ -119,6 +119,9 @@
     footer { padding: 32px 0 48px; font-size: 15px; color: var(--faint); }
     footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; }
     footer a { color: var(--muted); }
+    .footer-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 22px; }
+    .page-view-counter img { display: block; width: auto; height: 18px; filter: invert(1); opacity: .6; }
+    @media print { .page-view-counter { display: none !important; } }
 
     @media (max-width: 960px) {
       :root { --gutter: 32px; }
@@ -567,7 +570,12 @@
   <footer>
     <div class="wrap">
       <span>Haibo Wang</span>
-      <span><a href="../">Academic pages</a>&nbsp;&nbsp;&nbsp;<a href="#top">Back to top</a></span>
+      <span class="footer-meta">
+        <span id="page-view-counter" class="page-view-counter" hidden title="Page views since 25 October 2026; repeat visits are included.">
+          <img data-counter-src="https://hits.sh/haibowanglab.github.io/academic/personal.svg?style=flat-square&amp;label=Views&amp;color=000000&amp;labelColor=000000" alt="Page views" height="18" decoding="async" fetchpriority="low" referrerpolicy="no-referrer">
+        </span>
+        <span><a href="../">Academic pages</a>&nbsp;&nbsp;&nbsp;<a href="#top">Back to top</a></span>
+      </span>
     </div>
   </footer>
 
@@ -612,6 +620,18 @@
       }
       window.addEventListener('scroll', () => { if (!pending) { pending = true; requestAnimationFrame(update); } }, { passive: true });
       update();
+    })();
+  </script>
+  <!-- Shared page-view counter. Keep its key stable across query strings and deployments. -->
+  <script>
+    (() => {
+      const counter = document.getElementById('page-view-counter');
+      const image = counter.querySelector('img');
+      // Local previews do not count as public page views.
+      if (location.hostname !== 'haibowanglab.github.io' || !/^\/academic\/personal\/(?:index\.html)?$/.test(location.pathname)) return;
+      image.addEventListener('load', () => { counter.hidden = false; }, { once: true });
+      image.addEventListener('error', () => { counter.hidden = true; }, { once: true });
+      image.src = image.dataset.counterSrc;
     })();
   </script>
 </body>
